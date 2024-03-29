@@ -1,0 +1,20 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+  color: white;
+}
+
+body{
+  background-color: #000512;
+}
+
+@font-face {
+  font-family: Lufga;
+  src: url("./assets/fonts/LufgaBlack.ttf");
+}

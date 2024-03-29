@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+
+
+@font-face {
+    font-family: "voyage";
+    src: url("../assets/fonts/Voyage.otf");
+}
+
+@font-face {
+    font-family: "mitera";
+    src: url("../assets/fonts/Mitera Regular.otf");
+}
+
+
+.nav {
+    width: 100%;
+    height: max-content;
+    padding: 15px 35px;
+    color: #e5e2d3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: var(--sec-col);
+    display: flex;
+    font-family: "mon";
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.scroll-ef{
+    width: 90%;
+    border-radius: 50px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav .title {
+    font-family: mitera;
+    font-size: 13px;
+    color: var(--main-col);
+}
+
+.nav .subwrap {
+    display: flex;
+    gap: 20px;
+}
+
+.nav .link {
+    font-family: "voyage";
+    color: var(--for);
+    text-decoration: none;
+    font-size: 17px;
+    width: max-content;
+    height: max-content;
+    padding: 5px 10px;
+}
+
+.nav .link.cart{
+    margin-left: 10px;
+
+}
+.nav .link.sel {
+    color: var(--main-col);
+}
+
+.nav .icon, .sidebar{
+    display: none;
+}
+
+@media screen and (max-width: 711px) {
+    .nav div, .nav .subwrap{
+        display: none;
+    }
+    
+    .nav .icon{
+        font-size: 20px;
+        color: var(--main-col);
+        height: 100%;
+        width: max-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav .sidebar{
+        width: 100%;
+        background: var(--third);
+        position: absolute;
+        top: -120vh;
+        padding: 20px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        height: 120vh;
+        border-bottom-right-radius: 200px;
+        border-bottom-left-radius: 200px;
+        border-bottom: 2px solid var(--for);
+    }
+
+    .nav .sidebar .nrow{
+        width: 100%;
+        height: max-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav .sidebar .nrow .links{
+        width: 100%;
+        height: 100%;
+        font-family: "Montserrat";
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        color: white;
+        margin-top: 100px;
+    }
+    
+    .nav .sidebar .title.n{
+        font-size: 20px;
+        display: flex;
+    }
+
+    .nav .icon.close{
+        background-color: var(--main-col);
+        color: var(--third);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+    }
+
+    .nav .link{
+        padding: 0;
+        font-size: 23px;
+        width: 100%;
+        height: max-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav .sidebar .nrow .links .btns{
+        display: flex;
+        width: 100%;
+        height: 45px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        gap: 15px;
+    }
+
+    .nav .sidebar .nrow .links .btns .link{
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav .sidebar .nrow .links .btns .bdr{
+        width: 100%;
+        height: 100%;
+        border: 2px solid var(--for);
+        font-family: "Montserrat";
+        font-weight: 500;
+        font-size: 15px;
+        background-color: transparent;
+        border-radius: 20px;
+        color: var(--main-col);
+    }
+
+    .nav .sidebar .nrow .links .btns .bdr.f{
+        background-color: var(--main-col);
+        color: var(--third);
+    }
+}
+
+
+@keyframes openNav {
+    100%{
+        top: 0;
+    }
+}
+
+@keyframes closeNav {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: -120vh;
+    }
+}

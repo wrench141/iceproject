@@ -1,0 +1,9 @@
+:root {
+    --main-col: #bfcfff;
+    --sec-col: #000512;
+    --third: #000029;
+    --for: #80a0ff73;
+    cursor: pointer;
+
+    --prim-font: "voyage"
+}

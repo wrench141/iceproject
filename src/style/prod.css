@@ -1,0 +1,478 @@
+.prods .container {
+    width: 100%;
+    height: max-content;
+    min-height: 100vh;
+    padding: 60px 0;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: var(--sec-col);
+    display: flex;
+    overflow-x: hidden;
+    align-items: center;
+}
+
+.prods .container .wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prods .container .products-set {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prods .container .products-set .title {
+    font-family: var(--prim-font);
+    font-size: 30px;
+    margin: 30px 0;
+    margin-bottom: 40px;
+    color: var(--main-col);
+}
+
+.prods .container .products-set .title.prods{
+    width: 100%;
+   display: flex;
+   align-items: center;
+   gap: 20px; 
+}
+
+.prods .container .products-set .set {
+    width: 100%;
+    height: 90%;
+    white-space: nowrap;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.prods .container .products-set .set .product {
+    width: 200px;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 200px;
+    transition: transform 0.3s ease-in-out;
+    flex-shrink: 0;
+}
+
+.prods .container .products-set .set .product.sm {
+    width: 180px;
+}
+
+.prods .container .products-set .set .product.sm .img {
+    height: 250px;
+}
+
+.prods .container .products-set .set .product .rw {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+    gap: 5px;
+}
+
+.prods .container .products-set .set .product .rw .ptitle {
+    font-family: "Antic Didone";
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.prods .container .products-set .set .product .rw .ptitle.price {
+    font-size: 17px;
+    font-weight: 400;
+    color: #e1e1e1;
+}
+
+.prods .container .products-set .set .product .pbtn {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: var(--sec-col);
+    font-family: "Antic Didone";
+    font-size: 13px;
+    background: var(--main-col);
+    border-radius: 30px;
+    margin-top: 15px;
+}
+
+.prods .container .products-set .set .product.sel {
+    width: 240px;
+    height: 100%;
+}
+
+.prods .container .products-set .set .product.sel .img {
+    height: 350px;
+}
+
+.prods .container .products-set .set .product.center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.prods .container .products-set .set .product .img {
+    width: 100%;
+    height: 300px;
+    border-radius: 200px;
+    border: 1.54px solid rgb(191, 207, 255);
+    padding: 7px;
+}
+
+.prods .container .products-set .set .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.prods .container .products-set .set .carousel-btn.prev {
+    left: 20px;
+}
+
+.prods .container .products-set .set .carousel-btn.next {
+    right: 20px;
+}
+
+#prev{
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    height: 30px;
+    background:transparent;
+    border:none;
+}
+
+#nxt{
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    right: 30px;
+    height: 30px;
+    background:transparent;
+    border:none;
+}
+
+#prev .arrow, #nxt .arrow  {
+    width: 70px;
+    position: relative;
+    height: 1px;
+    border-radius: 50%;
+    background: var(--main-col);
+    transition: all .4s ease;
+}
+
+#prev .arrow.rev, #nxt .arrow.rev  {
+    transform: rotate(-180deg) translateY(-50%);
+}
+
+#prev .arrow::after, #nxt .arrow::after {
+    width: 10px;
+    height: 1px;
+    background-color: var(--main-col);
+    position: absolute;
+    content: "";
+    transform: rotate(45deg);
+    transform-origin: right;
+    right: 0;
+    top: 50%;
+}
+
+#prev .arrow::before, #nxt .arrow::before {
+    width: 10px;
+    height: 1px;
+    background-color: var(--main-col);
+    position: absolute;
+    content: "";
+    transform: rotate(-45deg);
+    transform-origin: right;
+    right: 0;
+    top: 50%;
+}
+
+
+
+.prodct{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 100px max-content 1fr;
+}
+
+.prodct .imgsArr{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 20px;
+}
+
+.prodct .imgsArr .img{
+    width: 100%;
+    border-radius: 10px;
+    height: max-content;
+}
+
+.prodct .imgsArr .img.sel{
+    border: 2px solid var(--main-col);
+}
+
+
+.prodct .img{
+    width: auto;
+    border: 2px solid var(--for);
+    height: 55vh;
+    border-radius: 20px;
+}
+
+.prodct .pdata{
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+    background: linear-gradient(to right, rgb(0, 0, 72), var(--third));
+    padding: 20px 30px;
+}
+
+.prodct .pdata .title{
+    font-size: 30px;
+}
+
+.prodct .pdata .wrap{
+    width: max-content;
+    height: max-content;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.prodct .pdata .tag{
+    width: max-content;
+    height: max-content;
+    padding: 5px 10px;
+    background: var(--main-col);
+    color: var(--sec-col);
+    font-family: "Montserrat";
+    font-size: 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    margin-top: 15px;
+    border: 1.5px solid var(--main-col);
+}
+
+.prodct .pdata .tag.ot{
+    background-color: transparent;
+    border: 1.5px solid var(--main-col);
+    color: var(--main-col);
+}
+
+.prodct .pdata .tag.pt{
+    background-color: transparent;
+    border: none;
+    color: var(--main-col);
+    padding: 0;
+    margin-right: 20px;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    gap: 3.5px;
+    font-weight: 500;
+}
+
+.prodct .pdata .sub{
+    font-family: "Antic Didone";
+    font-size: 17px;
+    line-height: 150%;
+    color: var(--main-col);
+    margin-top: 15px;
+}
+
+.prodct .pdata .wrap:last-child{
+    width: 100%;
+    height: max-content;
+}
+
+.prodct .pdata .wrap .price{
+    font-family: "Montserrat";
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+
+.prodct .pdata .wrap.wdt{
+    width: 100%;
+    height: max-content;
+    display: flex;
+}
+
+.prodct .pdata .wrap.wdt div{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.prodct .pdata .wrap.wdt div .lab{
+    font-family: "Antic Didone";
+    font-size: 13px;
+    color: var(--main-col);
+}
+
+.prodct .pdata .wrap.wdt div .pbtn{
+    width: max-content;
+    height: max-content;
+    padding: 10px 20px;
+}
+
+.prodct .pdata .wrap.wdt div .quan{
+    width: max-content;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    overflow: hidden;
+    align-items: center;
+    border: 1.5px solid var(--for);
+}
+
+.prodct .pdata .wrap.wdt div .quan .qbtn{
+    width: 35px;
+    height: 100%;
+    border: 1.5px solid var(--for);
+    background-color: transparent;
+    color: var(--main-col);
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--for);
+}
+
+.prodct .pdata .wrap.wdt div .quan .cnt{
+    width: max-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.prodct .pdata .wrap.wdt .col .pbtn{
+    width: max-content;
+    height: 100%;
+    background-color: var(--main-col);
+    border: none;
+    color: var(--sec-col);
+    border-radius: 20px;
+    font-family: "Montserrat";
+    font-weight: 700;
+}
+
+.prodct .pdata .wrap.wdt .col .pbtn.bdr{
+    border: 1.5px solid var(--main-col);
+    color: var(--main-col);
+    background: transparent;
+}
+
+.prodct .pdata .wrap.wdt {
+    margin-top: "50px";
+    gap: "30px"
+}
+
+
+@media screen and (max-width: 711px) {
+    #prev {
+        display: none;
+    }
+    #nxt {
+        display: none;
+    }
+
+    .prods .container .products-set .set .product.sm{
+        width: 240px;
+    }
+
+    .prods .container .products-set .set .product.sm .img{
+        height: 350px;
+    }
+
+    .prods .container .products-set .set{
+        overflow-x: scroll;
+        justify-content: flex-start;
+    }
+
+    .prodct{
+        display: flex;
+        flex-direction: column;
+    }
+    .prodct .imgsArr .img{
+        width: max-content;
+        height: 100%;
+    }
+    .prodct .img{
+        width: 100%;
+        height: max-content;
+    }
+
+    .prodct .pdata .sub{
+        text-align: left;
+        font-size: 15px;
+    }
+
+    .prodct .pdata .tag.pt{
+        margin: 0;
+    }
+
+    .prodct .pdata .wrap:last-child{
+        margin-top: 20px;
+    }
+
+    .prodct .pdata .wrap.wdt div .lab.n{
+        display: none;
+    }
+
+    .prodct .pdata .wrap.wdt{
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .prodct .imgsArr{
+        height: 100px;
+    }
+
+    .prodct .pdata .wrap.wdt div .pbtn{
+        padding: 10px 13px;
+        font-size: 11px;
+    }
+}

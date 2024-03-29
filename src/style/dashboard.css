@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.dashboard{
+    width: 100%;
+    height: max-content;
+    min-height: 100vh;
+    background-color: #0b0b0b;
+    position: relative;
+    display: flex;
+    overflow-y: hidden;
+}
+
+.dashboard .dummy{
+    width: 15%;
+    height: 100%;
+}
+
+.dashboard .navb{
+    width: 15%;
+    height: 100%;
+    font-family: "Montserrat";
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    z-index: 3;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 20px;
+    background: #020401;
+    border-right: 1.5px solid #191d1d;
+}
+
+
+.dashboard .navb .title{
+    font-weight: 700;
+    font-size: 17px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.dashboard .navb .links{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.dashboard .navb .links .link{
+    color: white;
+    width: 100%;
+    height: max-content;
+    padding: 15px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dashboard .navb .links .link.sel{
+    background: #181818;
+}
+
+.dashboard .navb .link.del{
+    width: 100%;
+    height: 35px;
+    border: 1.5px solid #ff000085;
+    color: red;
+    background: #ff000024;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+
+.dashboard .sideSection{
+    width: 85%;
+    height: 100%;
+}
+
+.dashboard .sideSection .topbar{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    background: #020401;
+    padding: 20px 30px;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #191d1d;
+}
+
+.dashboard .sideSection .topbar .title{
+    font-size: 17px;
+    font-weight: 700;
+    font-family: "Montserrat";
+}
+
+.dashboard .sideSection .topbar .btn{
+    width: 35px;
+    height: 35px;
+    border: 1.5px solid grey;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.dashboard .sideSection .sections{
+    width: 100%;
+    height: calc(100% - 75px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.dashboard .sideSection .sections .sec1{
+    width: 100%;
+    height: 100%;
+    padding: 20px 30px;
+}
+
+.dashboard .sideSection .sections .sec1 .tab{
+    width: 100%;
+    height: max-content;
+    margin-top: 20px;
+    font-family: "Montserrat";
+}
+
+.dashboard .sideSection .sections .sec1 .tab .tr .head{
+    font-weight: bold;
+    font-size: 13px;
+    background-color: #1e1e1e;
+    padding: 0 10px;
+    height: 45px;
+    width: max-content;
+    text-align: center;
+    word-wrap: no-wrap;
+}
+.dashboard .sideSection .sections .sec1 .tab .tr .bdy{
+    font-size: 12px;
+    background-color: #2c2c2c;
+    text-align: center;
+    padding: 10px 20px;
+    height: max-content;
+}
+
+.dashboard .sideSection .sections .sec1 .tab .tr .upd{
+    width: max-content;
+    height: max-content;
+    border: none;
+    font-family: "Montserrat";
+    font-size: 12px;
+    color: white;
+    background: #6004b4;
+    padding: 4px 9px;
+    border-radius: 4px;
+    border: 1px solid rgb(102, 102, 255);
+}
+
+.dashboard .sideSection .sections .sec1 .tab .tr .upd.del{
+    border: 1.5px solid #ff000085;
+    color: red;
+    background: #ff000024;
+}
+
+.dashboard .sideSection .sections .sec1 .tab .tr .bdy .btnsWrap{
+    width: max-content;
+    height: max-content;
+    display: flex;
+    gap: 10px;
+}
+
+
+.dashboard .sideSection .sections .new{
+    width: 100%;
+    height: max-content;
+    padding: 20px;
+    padding-right: 40px;
+}
+
+.dashboard .sideSection .sections .new .form{
+    width: 100%;
+    height: max-content;
+    font-family: "Montserrat";
+    margin-top: 20px;
+}
+
+.dashboard .sideSection .sections .new .form .sbtn{
+    width: 100%;
+    height: 35px;
+    color: white;
+    font-family: "Montserrat";
+    font-size: 12px;
+    background-color: #6004b4;
+    border: none;
+    border-radius:10px;
+}
+
+
+.dashboard .sideSection .sections .new .form .wrap{
+    margin-bottom: 20px;
+}
+
+.dashboard .sideSection .sections .new .form .lab{
+    font-size: 12px;
+}
+
+.dashboard .sideSection .sections .new .form .inp{
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+    padding: 0 10px;
+    border: 1px solid #00800045;
+    border-radius: 10px;
+    background-color: #181818;
+    color: white;
+    font-size: 12px;
+    font-family: "Montserrat";
+}
+
+
+.dashboard .sideSection .sections .new .title, .dashboard .sideSection .sections .sec1 .title
+{
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.dashboard .sideSection .sections .sec1 .cards{
+    width: 100%;
+    height: max-content;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.dashboard .sideSection .sections .sec1 .cards .card{
+    width: 100%;
+    height: 150px;
+    border-radius: 20px;
+    background: linear-gradient(120deg, #333, #222, #1c1c1c);
+    font-family: "Montserrat";
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.dashboard .sideSection .sections .sec1 .cards .card .sub{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.dashboard .sideSection .sections .sec1 .cards .card .subtxt{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard .sideSection .sections .sec1 .cards .card .subtxt .row{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.dashboard .sideSection .sections .sec1 .cards .card .subtxt .row .prc{
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.dashboard .sideSection .sections .sec1 .cards .card .subtxt .row .inc{
+    width: max-content;
+    height: max-content;
+    display: flex;
+    padding: 5px 10px;
+    background: #00800045;
+    border: 1px solid #007300;
+    border-radius: 40px;
+    align-items: center;
+    color: #83ff83;
+    font-weight: 600;
+    font-size: 12px;
+    gap: 10px;
+}
+
+.dashboard .sideSection .sections .sec1 .cards .card .subtxt .row .inc.dec{
+    background: #80000045;
+    border: 1px solid #730000;
+    color: #ff8383;
+}
+
+.dashboard .sideSection .sections .sec1 .cards .card .subtxt .mon{
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.dashboard .sideSection .sections .sec1 .graphSec{
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    font-family: "Montserrat";
+}
+
+.dashboard .sideSection .sections .sec1 .graphSec .title{
+    margin-bottom: 25px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.dashboard .sideSection .sections .sec1 .graphSec .graph{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr max-content;
+}
+.dashboard .sideSection .sections .sec1 .graphSec .graph .insec{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 45px 1fr;
+}
+
+.dashboard .sideSection .sections .sec1 .graphSec .graph .insec .leftlabs{
+    height: 100%;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 700;
+    color: grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding-right: 20px;
+}
+
+.dashboard .sideSection .sections .sec1 .graphSec .graph .insec .midsec{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.dashboard .sideSection .sections .sec1 .graphSec .graph .bottomlabs{
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-weight: 700;
+    color: grey;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-top: 20px;
+}
+
+.dashboard .sideSection .sections .sec1 .graphSec .graph .bottomlabs .lib{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard .sideSection .sections .sec1 .graphSec .graph .midsec .level{
+    width: 50px;
+    height: var(--perc);
+    border-radius: 15px;
+    background: linear-gradient(to top, #6004b4, #cd98ff);
+}
+
+.msg{
+    width: max-content;
+    height: max-content;
+    padding: 10px 15px;
+    border-radius: 9px;
+    color: white;
+    z-index: 4;
+    font-family: "Montserrat";
+    font-size: 12px;
+    position: absolute;
+    top:70px; right: -10%;
+    background: #181818;
+    animation: slidein 0.5s ease forwards;
+}
+
+@keyframes slidein {
+    to{
+        right: 20px;
+    }
+}
+
+
+.backwrap{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0b0b0b;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.backwrap .popup{
+    width: max-content;
+    height: max-content;
+    padding: 20px 30px;
+    background: #020401;
+    border-radius: 20px;
+    border: 1px solid #191d1d;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.backwrap .popup .imgs{
+    width: max-content;
+    height: 60px;
+    display: flex;
+    gap: 10px;
+}
+
+.backwrap .popup .imgs .pimg{
+    width: auto;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.backwrap .popup .pbtn{
+    width: max-content;
+    height: max-content;
+    padding: 10px  15px;
+    background: #6004b4;
+    font-family: "Montserrat";
+    font-size: 12px;
+    border-radius: 5px;
+    color: white; 
+    border: none;
+    border: 1.5px solid #6004b4;
+}
+
+.backwrap .popup .pbtn.del{
+    border: 1.5px solid #ff000085;
+    color: red;
+    background: #ff000024;
+}

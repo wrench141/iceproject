@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@font-face {
+    font-family: "voyage";
+    src: url("../assets/fonts/Voyage.otf");
+}
+@font-face {
+    font-family: "mitera";
+    src: url("../assets/fonts/Mitera Regular.otf");
+}
+
+@font-face {
+    font-family: "ageya";
+    src: url("../assets/fonts/Ageya-Regular.otf");
+}
+
+:root{
+    --main-col: #bfcfff;
+    --sec-col: #000512;
+    --third: #000029;
+    --for: #80a0ff73;
+    cursor: pointer;
+    
+    --prim-font: "voyage"
+}
+
+.hcontainer
+{
+    width:100%;
+    height: 100vh;
+    background-color: var(--sec-col);
+    color: white;
+    overflow-x: hidden;
+    font-size: 30px;
+}
+
+.hcontainer .incont{
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+}
+
+.hcontainer .incont .sec{
+    width: 100%;
+    height: 100%;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hcontainer .incont .sec:last-child{
+    align-items: center;
+}
+
+.hcontainer .incont .sec .title{
+    font-family: var(--prim-font);
+    font-size: 45px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--main-col);
+}
+.hcontainer .incont .sec .sub{
+    position: relative;
+    z-index: 2;
+    font-size: 18px;
+    width: 70%;
+    font-family: "Antic Didone";
+}
+.hcontainer .incont .sec .mid{
+    width: 50%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.hcontainer .incont .sec .mid .img{
+    border-radius: 10px;
+    width: 200px;
+    height: auto;
+    display: none;
+    opacity: 0.7;
+    border: 2px solid rgba(255, 255, 255, 0.277);
+}
+
+.hcontainer .incont .sec .mid .subtitle{
+    font-size: 18px;
+    margin: 20px 0;
+    font-family: "Antic Didone";
+}
+
+.btn{
+    width: max-content;
+    height: max-content;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-family: var(--prim-font);
+    font-size: 18px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: transparent;
+    color: var(--main-col);
+}
+
+.btn .arrow{
+    width: 70px;
+    position: relative;
+    height: 1px;
+    border-radius: 50%;
+    background: var(--main-col);
+    transition: all .4s ease;
+}
+
+.btn .arrow.rev{
+    transform: rotate(-180deg);
+}
+
+.btn:hover .arrow{
+    width: 90px;
+}
+
+.btn .arrow::after{
+    width: 10px;
+    height: 1px;
+    background-color: var(--main-col);
+    position: absolute;
+    content: "";
+    transform: rotate(45deg);
+    transform-origin: right;
+    right: 0;
+    top: 50%;
+}
+
+.btn .arrow::before {
+    width: 10px;
+    height: 1px;
+    background-color: var(--main-col);
+    position: absolute;
+    content: "";
+    transform: rotate(-45deg);
+    transform-origin: right;
+    right: 0;
+    top: 50%;
+}
+
+
+.hcontainer .incont .midVid{
+    width: 300px;
+    height: 80%;
+    border-radius: 200px;
+    border: 2px solid var(--for);
+    background-color: rgb(32, 32, 32);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* overflow: hidden; */
+}
+
+.hcontainer .incont .midVid::before{
+    content: "";
+    border: 2px solid var(--for);
+    width: 100%;
+    height: calc(100% + 10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform:  rotate(5deg);
+    border-radius: 200px;
+}
+
+.hcontainer .incont .midVid .midimg{
+    width: 100%;
+    height: 100%;
+    border-radius: 200px;
+}
+
+/* strip */
+
+.strip{
+    width: 100%;
+    height: max-content;
+    white-space: nowrap;
+    background: var(--third);
+    padding: 20px;
+    color: var(--main-col);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-size: 22px;
+}
+
+.scroll{
+    animation: scroll 16s linear infinite
+}
+
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }to{      
+        transform: translateX(-50%);
+    }
+}
+
+.strip::-webkit-scrollbar {
+    display: none;
+}
+
+/* section 2 */
+
+.hcontainer .incont.sec{
+    width: 100%;
+    background-color: var(--sec-col);
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hcontainer .incont.sec .midwrap{
+    width: 95%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+}
+
+.hcontainer .incont.sec .txt{
+    width: 60%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.hcontainer .incont.sec .txt .subtxt{
+    font-family: "Antic Didone";
+    font-size: 20px;
+    line-height: 150%;
+    margin-top: 20px;
+    color: #c9c9c9;
+    margin-bottom: 40px;
+}
+
+.hcontainer .incont.sec .txt .title{
+    font-size: 25px;
+    font-family: var(--prim-font);
+
+}
+
+.hcontainer .incont.sec .img{
+    width: auto;
+    height: 70vh;
+    border-radius: 10px;
+    border: 2px solid var(--for);
+}
+
+.incont.prods{
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--third);
+}
+
+
+.incont.prods .btns{
+    width: max-content;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+
+.incont.prods .prodSec{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    margin: 20px 0;
+    grid-template-columns: 0.7fr 1fr;
+}
+
+.incont.prods .prodSec .primWrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+}
+
+.incont.prods .prodSec .primWrap .mtit{
+    font-size: 25px;
+    font-family: var(--prim-font);
+}
+
+.incont.prods .prodSec .primWrap .desc{
+    font-size: 18px;
+    font-family: "Antic Didone";
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.incont.prods .prodSec .secScroller{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 20px;
+}
+
+.incont.prods .prodSec .secScroller .scroller{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.incont.prods .prodSec .secScroller .selImg{
+    width: 270px;
+    height: 100%;
+    border-radius: 200px;
+    overflow: hidden;
+    border: 1px dashed var(--main-col);
+}
+.incont.prods .prodSec .secScroller .selImg .img, 
+.incont.prods .prodSec .secScroller .other .img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.incont.prods .prodSec .secScroller .other{
+    width: 240px;
+    overflow: hidden;
+    height: 90%;
+    border: 1px dashed var(--main-col);
+    border-radius: 200px;
+}
+
+.incont.prods .prodSec .secScroller .other:last-child{
+    width: 210px;
+    height: 80%;
+}
+
+.btns .title{
+    font-family: var(--prim-font);
+    font-size: 35px;
+    color: var(--main-col);
+}
+
+.btns .btn .arrow{
+    width: 50px;
+}
+
+.hcontainer .incont.cont {
+    width: 100%;
+    height: max-content;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--sec-col);
+}
+
+.hcontainer .incont.cont .btns{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.hcontainer .incont.cont .innersec{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    gap: 40px;
+    font-family: "Antic Didone";
+}
+
+.hcontainer .incont.cont .innersec .row{
+    width: 100%;
+    height: max-content;
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+}
+
+.hcontainer .incont.cont .innersec .row .card{
+    width: max-content;
+    height: 100%;
+    font-size: 12px;
+}
+
+.hcontainer .incont.cont .innersec .row .card .title{
+    font-size: 18px;
+    margin-bottom: 7px;
+    color: var(--main-col);
+}
+
+.hcontainer .incont.cont .innersec .row .card .sub{
+    font-size: 14px;
+}
+
+.hcontainer .incont.cont .innersec .desc{
+    font-size: 18px;
+    width: 100%;
+    line-height: 150%;
+    margin-top: 50px;
+}
+
+.hcontainer .incont.cont .innersec .em{
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.hcontainer .incont.cont .innersec .wrap{
+    width: 50%;
+    height: 100%;
+}
+
+.hcontainer .incont.cont .innersec .wrap .inps{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    gap: 10px;
+}
+
+.hcontainer .incont.cont .innersec .wrap .inps .inp{
+    width: 50%;
+    padding: 0 10px;
+    border: 2px solid var(--for);
+    border-radius: 20px;
+    color: white;
+    font-family:"Antic Didone";
+    background: var(--sec-col);
+    font-size: 20px;
+}
+
+.hcontainer .incont.cont .innersec .wrap .inp.ara{
+    padding:10px;
+    border: 2px solid var(--for);
+    border-radius: 20px;
+    color: var(--main-col);
+    font-family: var(--prim-font);
+    background: var(--sec-col);
+    font-size: 20px;
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+    
+}
+
+.hcontainer .incont.cont .innersec .wrap .btn{
+    width: max-content;
+    height: max-content;
+    padding: 9px 19px;
+    background-color: #bfcfff;
+    color: var(--sec-col);
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.heroSec {
+    margin-left: 50px;
+}
+
+@media screen and (max-width: 711px) {
+    .hcontainer .incont {
+        grid-template-columns: 1fr;
+        height: calc(80vh - 60px);
+    }
+
+    .hcontainer .incont .sec::after{
+        width: 100%;
+        height: 100%;
+        background-color: #0005120a;
+        backdrop-filter: blur(33px);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    .hcontainer .incont .sec .title, .sub{
+        z-index: 3;
+        text-align: center;
+    }
+
+    .hcontainer .incont .sec .title{
+        font-size: 40px;
+    }
+    
+    .hcontainer .incont .sec .sub{
+        z-index: 3;
+        width: 100%;
+    }
+
+    .heroSec{
+        margin-left: 0;
+    }
+    
+    .hcontainer .incont .sec:last-child{
+        display: none;
+    }
+
+    .hcontainer .incont.sec .midwrap{
+        flex-direction: column;
+    }
+
+    .hcontainer .incont.sec{
+        height: max-content;
+    }
+
+    .hcontainer .incont.sec .img{
+        width: 100%;
+        height: auto;
+    }
+
+    .hcontainer .incont.sec .txt{
+        width: 100%;
+        padding: 40px 0;
+    }
+
+    .hcontainer .incont.sec .txt .subtxt{
+        font-size: 15px;
+    }
+
+    .incont.prods .prodSec{
+        gap: 20px;
+        overflow-x: scroll;
+    }
+
+    .incont.prods .prodSec .primWrap{
+        padding-left: 20px;
+    }
+
+    .incont.prods .prodSec .primWrap .mtit{
+        font-size: 23px;
+        color: var(--main-col);
+    }
+
+    .hcontainer .incont.cont .innersec{
+        flex-direction: column;
+    }
+
+    .hcontainer .incont.cont .innersec .wrap{
+        width: 100%;
+    }
+
+    .hcontainer .incont.cont .innersec .wrap .inps{
+        width: 100%;
+        flex-direction: column;
+        height: max-content;
+    }
+
+    .hcontainer .incont.cont .innersec .wrap .inps .inp{
+        height: 40px;
+        width: 100%;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+    .hcontainer .incont.cont .innersec .wrap .inp.ara{
+        border-radius: 10px;
+        font-size: 14px;
+    }
+}
