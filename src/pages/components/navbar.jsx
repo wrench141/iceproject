@@ -9,7 +9,7 @@ export default function Navbar(){
 
     return (
       <div className="nav">
-        <p className="title">Frosty ✦ Creations</p>
+        <p className="title">✦ Liquido</p>
         <div className="icon" onClick={() => setOpen(!open)}>
           <ion-icon name="menu-outline"></ion-icon>
         </div>
@@ -22,7 +22,7 @@ export default function Navbar(){
           }
         >
           <div className="nrow">
-            <p className="n title">Frosty ✦ Creations</p>
+            <p className="n title">✦ Liquido</p>
             <div className="icon close" onClick={() => setOpen(!open)}>
               <ion-icon name="close-outline"></ion-icon>
             </div>
