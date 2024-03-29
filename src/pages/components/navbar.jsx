@@ -6,6 +6,7 @@ import "../../style/nav.css"
 export default function Navbar(){
 
     const [open, setOpen] = useState(false)
+    const token = window.localStorage.getItem("token")
 
     return (
       <div className="nav">
@@ -49,7 +50,25 @@ export default function Navbar(){
                 {/* <a href="/cart" className="link">
                   <button className="bdr">Cart</button>
                 </a> */}
-                <button className="bdr f">Logout</button>
+                {token ? (
+                  <button
+                    className="bdr f"
+                    onClick={() => {
+                      window.localStorage.removeItem("token");
+                    }}
+                  >
+                    Logout
+                  </button>
+                ) : (
+                  <button
+                    className="bdr f"
+                    onClick={() => {
+                      window.location.href("/verifyEmail");
+                    }}
+                  >
+                    Login
+                  </button>
+                )}
               </div>
             </div>
           </div>

@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import axios from  "axios";
 import HOST_URI from "../components/url"
+import banner from "../../assets/banner.jpg";
 
 
 export default function Products(){
@@ -103,56 +104,37 @@ export default function Products(){
         <div className="container">
           <div className="wrapper">
             <div className="products-set">
-              <div className="title">Customized ✦ Ice</div>
-              <div className="set" ref={rowRef}>
-                {products.map((product, i) => {
-                  let mid = Math.ceil(products.length / 2) - 1;
-                  console.log(mid)
-                  return mid == i ? (
-                    <div className="product sel">
-                      <img src={product.prodimages[0]} alt="" className="img" />
-                      <div className="rw">
-                        <p className="ptitle">{product.prodname}</p>
-                        <p className="ptitle price">₹{product.price}</p>
-                      </div>
-                      <a
-                        style={{
-                          width: "50%",
-                          height: "max-content",
-                          textDecoration: "none",
-                        }}
-                        href={"/product/" + product._id}
-                      >
-                        <button className="pbtn">View More</button>
-                      </a>
-                    </div>
-                  ) : (
-                    <div className="product sm">
-                      <img src={product.prodimages[0]} alt="" className="img" />
-                      <div className="rw">
-                        <p className="ptitle">{product.prodname}</p>
-                        <p className="ptitle price">₹{product.price}</p>
-                      </div>
-                      <a
-                        style={{
-                          width: "50%",
-                          height: "max-content",
-                          textDecoration: "none",
-                        }}
-                        href={"/product/" + product._id}
-                      >
-                        <button className="pbtn">View More</button>
-                      </a>
-                    </div>
-                  );
-                })}
+              <div className="title">
+                Discover Glacial Perfection's Finest Crystalline Clarity
+                Revealed
               </div>
-              <button onClick={() => prev()} id="prev">
-                <div className="arrow rev" />
-              </button>
-              <button id="nxt" onClick={() => next()}>
-                <div className="arrow" />
-              </button>
+              <div className="imgsec">
+                <div className="section1">
+                  <img src={banner} alt="" className="banner" />
+                  <p className="sub">
+                    We have multi-shaped ice cubes being provided as monthly
+                    subcriptions all over india.
+                  </p>
+                </div>
+                <div className="set" ref={rowRef}>
+                  {products.map((product, i) => (
+                    <a className="a" style={{textDecoration: "none", color: "white"}} href={"/product/" + product._id}>
+                      <div className="product sel" key={i}>
+                        <img
+                          src={product.prodimages[0]}
+                          alt=""
+                          className="img"
+                        />
+                        <div className="rw">
+                          <p className="ptitle">{product.prodname}</p>
+                          <p className="ptitle price">₹{product.price}</p>
+                        </div>
+                        <button className="pbtn">View More</button>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

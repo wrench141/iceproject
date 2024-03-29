@@ -5,13 +5,34 @@ import Navbar from "../components/navbar";
 import img2 from "../../assets/ice.png"
 import dry from "../../assets/dry.jpg";
 import sphere from "../../assets/sphere.jpg";
+import { useState } from "react";
+import axios from "axios";
+import HOST_URI from "../components/url";
 
 export default function Home(){
+
+    const [data, setData] = useState({ email: "", phone: "", desc: "" });
+    const submitHandler = async() => {
+      const resp = await axios.post(HOST_URI + `/contact/saveInfo`, {
+       email: data.email,
+       phone: data.phone, 
+       desc: data.desc 
+      });
+      document.getElementById("msg").textContent = resp.data.msg;
+      document.getElementById("msg").style.display = "flex"
+    };
+
+    const handleChange = (e) => {
+      setData({
+        ...data,
+        [e.target.name]: e.target.value,
+      });
+    };
     return (
       <>
         <div className="hcontainer">
           <Navbar />
-
+          <div className="msg" id="msg"></div>
           <div className="incont">
             <div className="sec">
               <div className="heroSec">
@@ -143,21 +164,35 @@ export default function Home(){
               </div>
               <div className="wrap">
                 <div className="inps">
-                  <input type="text" className="inp" placeholder="Your email" />
+                  <input
+                    type="text"
+                    className="inp"
+                    value={data.email}
+                    onChange={handleChange}
+                    placeholder="Your email"
+                    name="email"
+                  />
                   <input
                     type="text"
                     className="inp"
                     placeholder="Phone Number"
+                    value={data.phone}
+                    onChange={handleChange}
+                    name="phone"
                   />
                 </div>
                 <textarea
-                  name=""
+                  name="desc"
                   id=""
                   cols="30"
                   rows="10"
                   className="inp ara"
+                  value={data.desc}
+                  onChange={handleChange}
                 ></textarea>
-                <button className="btn">Contact Us</button>
+                <button className="btn" onClick={() => submitHandler()}>
+                  Contact Us
+                </button>
               </div>
             </div>
           </div>

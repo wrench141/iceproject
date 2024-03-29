@@ -1,69 +1,117 @@
 .prods .container {
     width: 100%;
-    height: max-content;
+    height: 100vh;
     min-height: 100vh;
     padding: 60px 0;
+    padding-bottom: 0;
     justify-content: flex-start;
     flex-direction: column;
     background-color: var(--sec-col);
     display: flex;
-    overflow-x: hidden;
+    overflow: hidden;
     align-items: center;
 }
 
 .prods .container .wrapper {
-    width: 80%;
+    width: 90%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 
 .prods .container .products-set {
     width: 100%;
-    height: max-content;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
+
+.prods .container .products-set .imgsec{
+    width: 100%;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+}
+
+.prods .container .products-set .imgsec .section1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+.prods .container .products-set .imgsec .section1 .banner{
+    height: 100%;
+    border-radius: 10px;
+    width: max-content;
+}
+
+
+.prods .container .products-set .wrap{
+    width: 100%;
+    height: max-content;
+    display: flex;
+}
+
 
 .prods .container .products-set .title {
     font-family: var(--prim-font);
-    font-size: 30px;
+    font-size: 40px;
     margin: 30px 0;
-    margin-bottom: 40px;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 20px;
     color: var(--main-col);
+}
+
+.prods .container .products-set .imgsec .section1 .sub{
+    font-family: "Montserrat";
+    font-size: 13px;
+    width: 90%;
+    margin-bottom: 20px;
+    display: block;
+    margin-top: 15px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: left;
+    display: none;
+}
+
+
+/*
+.prods .container .wrapper .products-set .section1 .banner {
+    width: max-content;
+    height: 70vh;
 }
 
 .prods .container .products-set .title.prods{
     width: 100%;
-   display: flex;
-   align-items: center;
-   gap: 20px; 
+    display: flex;
+    gap: 20px; 
 }
-
-.prods .container .products-set .set {
-    width: 100%;
-    height: 90%;
-    white-space: nowrap;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+ */
+ .prods .container .products-set .set {
+     width: 100%;
+     height: 90%;
+     display:flex;
+     flex-wrap: wrap;
+     gap: 30px;
     overflow: hidden;
+    overflow-y: scroll;
     transition: all 0.5s ease;
     position: relative;
 }
 
 .prods .container .products-set .set .product {
     width: 200px;
-    height: 100%;
-    display: inline-flex;
+    height: max-content;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-radius: 200px;
     transition: transform 0.3s ease-in-out;
-    flex-shrink: 0;
 }
 
 .prods .container .products-set .set .product.sm {
@@ -80,9 +128,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin-top: 20px;
-    text-align: center;
     gap: 5px;
 }
 
@@ -107,7 +153,7 @@
     align-items: center;
     border: none;
     color: var(--sec-col);
-    font-family: "Antic Didone";
+    font-family: "Montserrat";
     font-size: 13px;
     background: var(--main-col);
     border-radius: 30px;
@@ -120,7 +166,8 @@
 }
 
 .prods .container .products-set .set .product.sel .img {
-    height: 350px;
+    height: 300px;
+    border-radius: 10px;
 }
 
 .prods .container .products-set .set .product.center {
@@ -131,11 +178,8 @@
 }
 
 .prods .container .products-set .set .product .img {
-    width: 100%;
+    width: max-content;
     height: 300px;
-    border-radius: 200px;
-    border: 1.54px solid rgb(191, 207, 255);
-    padding: 7px;
 }
 
 .prods .container .products-set .set .carousel-btn {
@@ -331,6 +375,8 @@
     width: 100%;
     height: max-content;
     display: flex;
+    margin-top: 20px;
+    gap: 30px;
 }
 
 .prodct .pdata .wrap.wdt div{
@@ -408,6 +454,15 @@
     gap: "30px"
 }
 
+.prods .container .products-set .set .product .a{
+    width: max-content;
+    text-decoration: none;
+}
+
+.prods .container .products-set .set .product .pbtn{
+    padding: 0 20px;
+    width: 150px;
+}
 
 @media screen and (max-width: 711px) {
     #prev {
@@ -416,20 +471,22 @@
     #nxt {
         display: none;
     }
-
+    
     .prods .container .products-set .set .product.sm{
         width: 240px;
     }
-
+    
     .prods .container .products-set .set .product.sm .img{
         height: 350px;
     }
 
     .prods .container .products-set .set{
-        overflow-x: scroll;
+        overflow-x: hidden;
         justify-content: flex-start;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
-
+    
     .prodct{
         display: flex;
         flex-direction: column;
@@ -447,15 +504,15 @@
         text-align: left;
         font-size: 15px;
     }
-
+    
     .prodct .pdata .tag.pt{
         margin: 0;
     }
-
+    
     .prodct .pdata .wrap:last-child{
         margin-top: 20px;
     }
-
+    
     .prodct .pdata .wrap.wdt div .lab.n{
         display: none;
     }
@@ -470,9 +527,63 @@
     .prodct .imgsArr{
         height: 100px;
     }
-
+    
     .prodct .pdata .wrap.wdt div .pbtn{
         padding: 10px 13px;
         font-size: 11px;
     }
-}
+    .prods .container .products-set .title{
+        width: 100%;
+        font-size: 30px;
+    }
+    .prods .container .products-set .imgsec{
+        display: flex;
+        flex-direction: column;
+    }
+    .prods .container .products-set .imgsec .section1 .banner{
+        width: 100%;
+        height: max-content;
+    }
+    .prods .container {
+        height: max-content;
+        overflow: scroll;
+        padding-bottom: 30px;
+    }
+    .prods .container .wrapper{
+        width: 90%;
+        height: max-content;
+    }
+    .prods .container .products-set .imgsec{
+        height: max-content;
+        gap: 25px;
+    }
+    .prods .container .products-set .set .product.sel {
+        width: 100%;
+        overflow: hidden;
+    }
+    .prods .container .products-set .set .product.sel .img  {
+        width: 100%;
+        height: max-content;
+    }
+    .prods .container .products-set .imgsec .section1 .sub{
+        display: block;
+    }
+    .prods .container .products-set .imgsec .section1::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to top, #000512db, transparent);
+    }
+    .prods .container .products-set .set .product .a {
+        width: 100%;
+    }
+    .prods .container .products-set .set .product .pbtn{
+        padding: 7px 14px;
+        width: 100%;
+        border-radius: 5px;
+    }
+} 

@@ -71,7 +71,7 @@ export default function Product(){
               </div>
               {product != null ? (
                 <div className="prodct">
-                  <div className="imgsArr">
+                  <div className="imgsArr" style={{flexDirection: "row"}}>
                     {product.prodimages.map((img) => (
                       <img
                         src={img}

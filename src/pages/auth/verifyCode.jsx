@@ -1,37 +1,34 @@
-import '../../style/verifyEmail.css';
-import axios from "axios"
-import { useRef, useState } from 'react';
-import Navbar from '../components/navbar';
+import "../../style/verifyEmail.css";
+import axios from "axios";
+import { useRef, useState, useEffect } from "react";
+import Navbar from "../components/navbar";
 import HOST_URI from "../components/url";
 
-
 function CodeVerification() {
-  
-  
   const msg = useRef();
-  const [code, setCodes] = useState({});
+  const [code, setCode] = useState(["", "", "", "", ""]);
+  const inputRefs = useRef([]);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setCodes({ ...code, [name]: value });
+  useEffect(() => {
+    inputRefs.current[0].focus();
+  }, []);
+
+  const handleInputChange = (index, value, nextIndex) => {
+    const newCode = [...code];
+    newCode[index] = value;
+    setCode(newCode);
+
+    if (value && nextIndex < inputRefs.current.length) {
+      inputRefs.current[nextIndex].focus();
+    } else if (!value && index > 0) {
+      inputRefs.current[index - 1].focus();
+    }
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    var result = "";
+    const result = code.join("");
 
-    for (const key in code) {
-      if (code.hasOwnProperty(key)) {
-        let word = "";
-        for (let i = 0; i < code[key].length; i++) {
-          word += code[key][i];
-          if (word.match(/(\s|$)/)) {
-            result += word;
-            word = "";
-          }
-        }
-      }
-    }
     axios
       .post(HOST_URI + "/auth/verifycode", {
         email: window.localStorage.getItem("mail"),
@@ -39,19 +36,20 @@ function CodeVerification() {
       })
       .then((res) => {
         msg.current.textContent = res.data.msg;
-        if (res.status == 200) {
-          if (res.data.status === "register") {
-            window.location.href = "/setpassword";
-          } else {
-            window.location.href = "/login";
-          }
+
+        if (res.status === 200) {
+          window.localStorage.setItem("token", res.data.token);
+          setTimeout(() => {
+            window.location.href = "/"
+          }, 1000);
         }
+
         console.log(res.data);
       })
       .catch((e) => {
         console.log(e.message);
       });
-  }
+  };
 
   return (
     <>
@@ -68,41 +66,18 @@ function CodeVerification() {
                 </span>
               </p>
               <div className="codeWrap">
-                <input
-                  className="inp bx"
-                  name="i1"
-                  maxLength={1}
-                  value={code.i1 || ""}
-                  onChange={handleInputChange}
-                />
-                <input
-                  className="inp bx"
-                  name="i2"
-                  value={code.i2 || ""}
-                  onChange={handleInputChange}
-                  maxLength={1}
-                />
-                <input
-                  className="inp bx"
-                  name="i3"
-                  value={code.i3 || ""}
-                  onChange={handleInputChange}
-                  maxLength={1}
-                />
-                <input
-                  className="inp bx"
-                  name="i4"
-                  value={code.i4 || ""}
-                  onChange={handleInputChange}
-                  maxLength={1}
-                />
-                <input
-                  className="inp bx"
-                  name="i5"
-                  value={code.i5 || ""}
-                  onChange={handleInputChange}
-                  maxLength={1}
-                />
+                {code.map((digit, index) => (
+                  <input
+                    key={index}
+                    className="inp bx"
+                    maxLength={1}
+                    value={digit}
+                    onChange={(e) =>
+                      handleInputChange(index, e.target.value, index + 1)
+                    }
+                    ref={(ref) => (inputRefs.current[index] = ref)}
+                  />
+                ))}
               </div>
               <p
                 className="nm"
