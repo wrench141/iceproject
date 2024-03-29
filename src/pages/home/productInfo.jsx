@@ -12,6 +12,10 @@ import HOST_URI from "../components/url";
 
 export default function Product(){
     const id = useParams().id;
+    const token = window.localStorage.getItem("token");
+    if(!token){
+      window.location.href = "/verifyEmail"
+    }
     const [product, setProduct] = useState();
     const [quantity, setQuantity] = useState(1);
     const [selectedImg, setSelectedImg] = useState();
