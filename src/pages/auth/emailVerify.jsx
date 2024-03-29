@@ -54,7 +54,7 @@ function EmailVerification() {
                 className="inp"
                 placeholder="Enter your email"
               />
-              <div className="msg" ref={mesg}></div>
+              <div className="msg" ref={mesg}>Please login/register first.</div>
 
               <button className="btn">Send Code</button>
             </form>
