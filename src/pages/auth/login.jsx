@@ -43,7 +43,7 @@ function Login() {
         <div className="frm">
           <div className="wrap">
             <div className="title">
-              Frosty<span style={{ color: "#babaff" }}> Creations</span>
+              <span style={{ color: "#babaff" }}> Liquido</span>
             </div>
             <div className="sub">
               Welcome back! please enter your password to proceed.

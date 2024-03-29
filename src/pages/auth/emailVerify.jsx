@@ -38,7 +38,7 @@ function EmailVerification() {
         <div className="frm">
           <div className="wrap">
             <div className="title">
-              Frosty<span style={{ color: "#babaff" }}> Creations</span>
+              <span style={{ color: "#babaff" }}> Liquido</span>
             </div>
             <div className="sub">
               Styled ice is a custom ice carving company. Inorder to book your
