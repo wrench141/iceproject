@@ -63,7 +63,7 @@
     position: relative;
     z-index: 2;
     margin-bottom: 20px;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--main-col);
 }
 .hcontainer .incont .sec .sub{
