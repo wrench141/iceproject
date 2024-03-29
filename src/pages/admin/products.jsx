@@ -3,6 +3,8 @@ import axios from "axios";
 import { useRef } from "react";
 import { useEffect } from "react";
 import DescriptionPreview from "../components/minimizeContext";
+import HOST_URI from "../components/url";
+
 
 const Products = () => {
 
@@ -33,7 +35,7 @@ const Products = () => {
     console.log(data)
     try {
       const resp = await axios.post(
-        "http://localhost:4000/products/createProduct",
+        HOST_URI + "/products/createProduct",
         data,
         {
           headers: {
@@ -52,7 +54,9 @@ const Products = () => {
 
   useEffect(() => {
     const getProds = async() => {
-      const resp = await axios.get("http://localhost:4000/products/getProducts");
+      const resp = await axios.get(
+        HOST_URI + "/products/getProducts"
+      );
       setProducts(resp.data.msg);
     };
     getProds()
@@ -83,7 +87,7 @@ const Products = () => {
     };
     try {
       const resp = await axios.patch(
-        `http://localhost:4000/products/updateProduct/${prodId}`,
+        HOST_URI + `/products/updateProduct/${prodId}`,
         data,
         {
           headers: {
@@ -101,7 +105,7 @@ const Products = () => {
   const deleteHandler = async(id) => {
     try {
       const resp = await axios.delete(
-        `http://localhost:4000/products/deleteProduct/${id}`,
+        HOST_URI + `/products/deleteProduct/${id}`,
         {
           headers: {
             token: window.localStorage.getItem("token"),
@@ -129,7 +133,7 @@ const Products = () => {
     };
     try {
       const resp = await axios.patch(
-        `http://localhost:4000/products/uploadProductImage/${id}`,
+        HOST_URI + `/products/uploadProductImage/${id}`,
         body,
         {
           headers: {

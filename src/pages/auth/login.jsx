@@ -2,6 +2,8 @@ import '../../style/verifyEmail.css';
 import axios from "axios"
 import { useRef, useState } from 'react';
 import Navbar from '../components/navbar';
+import HOST_URI from "../components/url";
+
 
 function Login() {
   
@@ -15,9 +17,9 @@ function Login() {
   const submitHandler = (e) => {
     e.preventDefault()
     axios
-      .post("http://localhost:4000/auth/login", {
+      .post(HOST_URI + "/auth/login", {
         email: mail,
-        password: pass
+        password: pass,
       })
       .then((res) => {
         mesg.current.textContent = res.data.msg;

@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import axios from  "axios"
 import { useParams } from "react-router-dom";
+import HOST_URI from "../components/url";
+
 
 export default function Product(){
     const id = useParams().id;
@@ -17,7 +19,7 @@ export default function Product(){
     useEffect(() => {
       const getProduct = async() => {
         const resp = await axios.get(
-          `http://localhost:4000/products/getProduct/${id}`
+          HOST_URI + `/products/getProduct/${id}`
         );
         setProduct(resp.data.msg)
         setSelectedImg(resp.data.msg.prodimages[0])
@@ -26,13 +28,17 @@ export default function Product(){
     }, [])
 
     const addtocart = async(id) => {
-      const resp = await axios.post(`http://localhost:4000/cart/addToCart/${id}`, {
-        quantity
-      }, {
-        headers: {
-          token: window.localStorage.getItem("token")
+      const resp = await axios.post(
+        HOST_URI + `/cart/addToCart/${id}`,
+        {
+          quantity,
+        },
+        {
+          headers: {
+            token: window.localStorage.getItem("token"),
+          },
         }
-      });
+      );
       setBtxt(resp.data.msg + "!!");
       setTimeout(() => {
         setBtxt("Add to Cart")

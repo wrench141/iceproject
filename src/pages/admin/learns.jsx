@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useRef } from "react";
 import { useEffect } from "react";
+import HOST_URI from "../components/url";
+
 
 const Learnings = () => {
 
@@ -29,7 +31,7 @@ const Learnings = () => {
     console.log(data)
     try {
       const resp = await axios.post(
-        "http://localhost:4000/recipes/createRecipe",
+        HOST_URI + "/recipes/createRecipe",
         data,
         {
           headers: {
@@ -48,7 +50,9 @@ const Learnings = () => {
 
   useEffect(() => {
     const getProds = async() => {
-      const resp = await axios.get("http://localhost:4000/recipes/getAllRecipes");
+      const resp = await axios.get(
+        HOST_URI + "/recipes/getAllRecipes"
+      );
       setRecipes(resp.data.msg);
     };
     getProds()
@@ -73,7 +77,7 @@ const Learnings = () => {
     };
     try {
       const resp = await axios.patch(
-        `http://localhost:4000/recipes/updateRecipe/${prodId}`,
+        HOST_URI + `/recipes/updateRecipe/${prodId}`,
         data,
         {
           headers: {
@@ -91,7 +95,7 @@ const Learnings = () => {
   const deleteHandler = async(id) => {
     try {
       const resp = await axios.delete(
-        `http://localhost:4000/recipes/removeRecipe/${id}`,
+        HOST_URI + `/recipes/removeRecipe/${id}`,
         {
           headers: {
             token: window.localStorage.getItem("token"),
@@ -119,7 +123,7 @@ const Learnings = () => {
     };
     try {
       const resp = await axios.patch(
-        `http://localhost:4000/products/uploadProductImage/${id}`,
+        HOST_URI + `/products/uploadProductImage/${id}`,
         body,
         {
           headers: {

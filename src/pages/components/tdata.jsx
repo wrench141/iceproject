@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import HOST_URI from "../components/url";
+
 
 export default function Tdata({item, i}){
     const [quantity, setQuantity] = useState(0);
@@ -9,11 +11,14 @@ export default function Tdata({item, i}){
 
     const removeItem = async() => {
         const id = item.cartId;
-        const resp = await axios.delete(`http://localhost:4000/cart/deleteCartItem/${id}`, {
-            headers:{
-                token: window.localStorage.getItem("token")
-            }
-        });
+        const resp = await axios.delete(
+          HOST_URI + `/cart/deleteCartItem/${id}`,
+          {
+            headers: {
+              token: window.localStorage.getItem("token"),
+            },
+          }
+        );
         setTimeout(() => {
             window.location.reload()
         }, 1500);

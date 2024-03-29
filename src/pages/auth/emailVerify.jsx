@@ -3,6 +3,8 @@ import axios from "axios"
 import { useRef, useState } from 'react';
 import img from "../../assets/bg.jpeg"
 import Navbar from '../components/navbar';
+import HOST_URI from "../components/url";
+
 
 function EmailVerification() {
   
@@ -11,19 +13,22 @@ function EmailVerification() {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    axios.post("http://localhost:4000/auth/verifyemail", {
-      "email": mail
-    }).then((res) => {
-      mesg.current.textContent = res.data.msg;
-      if(res.status == 200){
-        window.localStorage.setItem("mail", mail)
-        setTimeout(() => {
-          window.location.href = "/verifyCode";
-        }, 1000);
-      }
-    }).catch((e) => {
-      console.log(e.message)
-    })
+    axios
+      .post(HOST_URI + "/auth/verifyemail", {
+        email: mail,
+      })
+      .then((res) => {
+        mesg.current.textContent = res.data.msg;
+        if (res.status == 200) {
+          window.localStorage.setItem("mail", mail);
+          setTimeout(() => {
+            window.location.href = "/verifyCode";
+          }, 1000);
+        }
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
   }
 
   return (

@@ -2,6 +2,8 @@ import '../../style/verifyEmail.css';
 import axios from "axios"
 import { useRef, useState } from 'react';
 import Navbar from '../components/navbar';
+import HOST_URI from "../components/url";
+
 
 function SetPassword() {
   
@@ -14,9 +16,9 @@ function SetPassword() {
     e.preventDefault()
     if(pass === repass){
       axios
-        .post("http://localhost:4000/auth/register", {
+        .post(HOST_URI + "/auth/register", {
           email: mail,
-          password: pass
+          password: pass,
         })
         .then((res) => {
           passNt.current.textContent = res.data.msg;

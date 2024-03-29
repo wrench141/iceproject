@@ -2,6 +2,8 @@ import '../../style/verifyEmail.css';
 import axios from "axios"
 import { useRef, useState } from 'react';
 import Navbar from '../components/navbar';
+import HOST_URI from "../components/url";
+
 
 function CodeVerification() {
   
@@ -30,22 +32,25 @@ function CodeVerification() {
         }
       }
     }
-    axios.post("http://localhost:4000/auth/verifycode", {
-      "email": window.localStorage.getItem('mail'),
-      "code" : result
-    }).then((res) => {
-      msg.current.textContent = res.data.msg;
-      if(res.status == 200){
-        if (res.data.status === "register") {
-          window.location.href="/setpassword";
-        }else{
-          window.location.href="/login";
+    axios
+      .post(HOST_URI + "/auth/verifycode", {
+        email: window.localStorage.getItem("mail"),
+        code: result,
+      })
+      .then((res) => {
+        msg.current.textContent = res.data.msg;
+        if (res.status == 200) {
+          if (res.data.status === "register") {
+            window.location.href = "/setpassword";
+          } else {
+            window.location.href = "/login";
+          }
         }
-      }
-      console.log(res.data)
-    }).catch((e) => {
-      console.log(e.message)
-    })
+        console.log(res.data);
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
   }
 
   return (

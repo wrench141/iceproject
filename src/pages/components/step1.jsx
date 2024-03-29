@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import ShelfItem from "./shelfItem";
 import axios from "axios"
+import HOST_URI from "../components/url";
 
 export default function Step1({ next }) {
   const [ingredients, setIngredients] = useState();
@@ -10,7 +11,7 @@ export default function Step1({ next }) {
     const fetchIngr = async () => {
       window.localStorage.removeItem("shelf")
       const resp = await axios.get(
-        `http://localhost:4000/recipes/getShelfItems`,
+        HOST_URI + `/recipes/getShelfItems`,
         {
           headers: {
             token: window.localStorage.getItem("token"),

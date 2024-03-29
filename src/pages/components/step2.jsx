@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "./card";
+import HOST_URI from "../components/url";
+
 
 export default function Step2({ back }) {
   const [recipes, setRecipes] = useState();
@@ -8,7 +10,7 @@ export default function Step2({ back }) {
   useEffect(() => {
     const getRecipes = async () => {
       const resp = await axios.post(
-        `http://localhost:4000/recipes/getRecipes`,
+        HOST_URI + `/recipes/getRecipes`,
         {
           ingredients: JSON.parse(window.localStorage.getItem("shelf")),
         },

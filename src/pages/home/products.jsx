@@ -5,7 +5,9 @@ import DescriptionPreview from "../components/minimizeContext";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
-import axios from  "axios"
+import axios from  "axios";
+import HOST_URI from "../components/url"
+
 
 export default function Products(){
     const rowRef = useRef();
@@ -88,7 +90,7 @@ export default function Products(){
     useEffect(() => {
       const getProds = async() => {
         const resp = await axios.get(
-          "http://localhost:4000/products/getProducts"
+          HOST_URI + `/products/getProducts`
         );
         setProducts(resp.data.msg)
       }

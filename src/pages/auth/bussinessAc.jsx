@@ -1,6 +1,8 @@
 import '../../style/verifyEmail.css';
 import axios from "axios"
 import { useRef, useState } from 'react';
+import HOST_URI from "../components/url";
+
 
 function BussinessAccount() {
   
@@ -12,27 +14,33 @@ function BussinessAccount() {
   const submitHandler = (e) => {
     e.preventDefault()
     axios
-      .post("http://localhost:4000/shop/createshop", {
-        shopname: name, desc: desc, keywords: keys
-      }, {
-        headers: {
-          token: window.localStorage.getItem("token")
+      .post(
+        HOST_URI + "/shop/createshop",
+        {
+          shopname: name,
+          desc: desc,
+          keywords: keys,
+        },
+        {
+          headers: {
+            token: window.localStorage.getItem("token"),
+          },
         }
-      })
+      )
       .then((res) => {
         const msg = document.createElement("div");
         msg.classList.add("msg");
         msg.textContent = res.data.msg;
         contRef.current.appendChild(msg);
         setTimeout(() => {
-          contRef.current.removeChild(msg)
+          contRef.current.removeChild(msg);
         }, 1000);
         if (res.status == 200) {
           setTimeout(() => {
             window.location.href = "/";
           }, 2000);
-        }else{
-          console.log(res.data.msg)
+        } else {
+          console.log(res.data.msg);
         }
       })
       .catch((e) => {

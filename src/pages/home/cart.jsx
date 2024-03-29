@@ -4,16 +4,18 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import img from "../../assets/ice.png"
 import Tdata from "../components/tdata";
+import HOST_URI from "../components/url";
+
 
 export default function Cart() {
   const [items, setItems] = useState();
 
   useEffect(() => {
     const getCartItems = async() => {
-      const resp = await axios.get(`http://localhost:4000/cart/getCartItems`, {
-        headers:{
-          token: window.localStorage.getItem("token")
-        }
+      const resp = await axios.get(HOST_URI + `/cart/getCartItems`, {
+        headers: {
+          token: window.localStorage.getItem("token"),
+        },
       });
       setItems(resp.data.msg);
     }

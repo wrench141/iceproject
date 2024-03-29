@@ -5,6 +5,7 @@ import img from "../../assets/wine.jpg";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useRef } from "react";
+import HOST_URI from "../components/url";
 
 
 export default function Order(){
@@ -29,7 +30,7 @@ export default function Order(){
     useEffect(() => {
         const getProduct = async () => {
             const resp = await axios.get(
-            `http://localhost:4000/products/getProduct/${id}`
+              HOST_URI + `/products/getProduct/${id}`
             );
             setProduct(resp.data.msg);
             console.log(resp.data.msg)
@@ -39,7 +40,7 @@ export default function Order(){
     
     const order = async() => {
         const resp = await axios.post(
-          `http://localhost:4000/orders/createOrder/${product._id}`,
+          HOST_URI + `/orders/createOrder/${product._id}`,
           {
             loc: addre.addr + "," + addre.pincode + "," + addre.city,
             phone: info.contact,
