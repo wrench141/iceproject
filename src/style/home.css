@@ -27,6 +27,10 @@
     --prim-font: "voyage"
 }
 
+#msg{
+    display: none;
+}
+
 .hcontainer
 {
     width:100%;
@@ -230,6 +234,14 @@
     height: max-content;
     display: flex;
     align-items: center;
+}
+
+.hcontainer .incont.sec .triGrid{
+    width: 100%;
+    height: max-content;
+    display: grid;
+    margin-bottom: 20px;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .hcontainer .incont.sec .txt{

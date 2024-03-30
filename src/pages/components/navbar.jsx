@@ -55,6 +55,7 @@ export default function Navbar(){
                     className="bdr f"
                     onClick={() => {
                       window.localStorage.removeItem("token");
+                      window.location.href = "/verifyEmail"
                     }}
                   >
                     Logout
@@ -63,7 +64,7 @@ export default function Navbar(){
                   <button
                     className="bdr f"
                     onClick={() => {
-                      window.location.href("/verifyEmail");
+                      window.location.href = "/verifyEmail";
                     }}
                   >
                     Login

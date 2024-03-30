@@ -5,7 +5,8 @@ import HOST_URI from "../components/url";
 
 
 export default function Step2({ back }) {
-  const [recipes, setRecipes] = useState();
+  const [recipes, setRecipes] = useState([]);
+  const [mocktail, setRMocktails] = useState([]);
 
   useEffect(() => {
     const getRecipes = async () => {
@@ -20,8 +21,13 @@ export default function Step2({ back }) {
           },
         }
       );
-      setRecipes(resp.data.msg);
-      console.log(resp.data.msg)
+      resp.data.msg?.map((item) => {
+        if(item.type.toLowerCase() == "mocktail"){
+          setRMocktails([...mocktail, item])
+        }else{
+          setRecipes([...recipes, item])
+        }
+      })
     };
     getRecipes();
   }, []);
@@ -31,14 +37,20 @@ export default function Step2({ back }) {
   return (
     <div className="cols">
       <div className="row-wrap">
-        <div className="label">Step-2: View Recipes</div>
+        <div className="label">Cocktail Recipes</div>
       </div>
       <div className="wrapper">
         <div className="ingr-row cards">
           {recipes != undefined
-            ? recipes.map((recipe, i) => (
-                <Card recipe={recipe} i={i}/>
-              ))
+            ? recipes.map((recipe, i) => <Card recipe={recipe} i={i} />)
+            : null}
+        </div>
+        <div className="row-wrap">
+          <div className="label">Mocktail Recipes</div>
+        </div>
+        <div className="ingr-row cards">
+          {mocktail != undefined
+            ? mocktail.map((recipe, i) => <Card recipe={recipe} i={i} />)
             : null}
         </div>
         <div className="ingr-row">

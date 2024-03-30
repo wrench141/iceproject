@@ -76,6 +76,32 @@ export default function Home(){
             <div className="midwrap">
               <img src={subimg} className="img" />
               <div className="txt">
+                <div className="triGrid">
+                  <div className="col">
+                    <p className="cnt">
+                      0+
+                    </p>
+                    <p className="desc">Orders</p>
+                  </div>
+                  <div className="col">
+                    <p className="cnt">
+                      0+
+                    </p>
+                    <p className="desc">Active Users</p>
+                  </div>
+                  <div className="col">
+                    <p className="cnt">
+                      0+
+                    </p>
+                    <p className="desc">Kitchen Tieups</p>
+                  </div>
+                  <div className="col">
+                    <p className="cnt">
+                      0+
+                    </p>
+                    <p className="desc">Restaurent Tieups</p>
+                  </div>
+                </div>
                 <div className="title">
                   Discover Frosty Creations, your one-stop shop for bar and
                   restaurant supplies.

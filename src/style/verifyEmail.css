@@ -165,6 +165,37 @@
     border-radius: 10px;
 }
 
+.container .frm.c .wrap.c .btn.disabled{
+    animation: slidein 0.5s ease forwards;
+}
+
+@keyframes slidein {
+    from{
+        width: 100%;
+    }to{
+        width: max-content;
+    }
+}
+
+.dots{
+    width: max-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 30px;
+    animation: load 3s ease-in-out infinite;
+}
+
+@keyframes load {
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}
+
 @media screen and (max-width: 711px) {
     .container .frm{
         width: 90%;

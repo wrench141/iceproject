@@ -8,6 +8,7 @@ function CodeVerification() {
   const msg = useRef();
   const [code, setCode] = useState(["", "", "", "", ""]);
   const inputRefs = useRef([]);
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     inputRefs.current[0].focus();
@@ -27,6 +28,7 @@ function CodeVerification() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setLoading(true);
     const result = code.join("");
 
     axios
@@ -35,8 +37,8 @@ function CodeVerification() {
         code: result,
       })
       .then((res) => {
+        setLoading(false)
         msg.current.textContent = res.data.msg;
-
         if (res.status === 200) {
           window.localStorage.setItem("token", res.data.token);
           setTimeout(() => {
@@ -49,6 +51,11 @@ function CodeVerification() {
       .catch((e) => {
         console.log(e.message);
       });
+
+    setTimeout(() => {
+      setLoading(false);
+      msg.current.textContent = "Network Issue: Something went wrong";
+  }, 10000);                                                                                                                                          
   };
 
   return (
@@ -101,7 +108,15 @@ function CodeVerification() {
                   Click to Resend
                 </span>
               </p>
-              <button className="btn">Verify Code</button>
+              {loading ? (
+                <button className="btn disabled" disabled>
+                  <div className="dots">
+                    <ion-icon name="snow-outline"></ion-icon>
+                  </div>
+                </button>
+              ) : (
+                <button className="btn">Verify Code</button>
+              )}
             </form>
           </div>
         </div>

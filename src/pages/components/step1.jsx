@@ -26,7 +26,7 @@ export default function Step1({ next }) {
   return (
     <div className="cols">
       <div className="row-wrap">
-        <div className="label">Step-1: Select Ingridients</div>
+        <div className="label">Select Ingredients</div>
       </div>
       <div className="wrapper">
         {ingredients != null
