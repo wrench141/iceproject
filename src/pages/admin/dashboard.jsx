@@ -3,6 +3,7 @@ import "../../style/dashboard.css";
 import DashboardNavbar from "../components/dashNav";
 import Dhome from "./home";
 import Learnings from "./learns";
+import Orders from "./orders";
 import Products from "./products"
 
 
@@ -14,7 +15,7 @@ function Dashboard (){
       <div className="dummy" />
       <DashboardNavbar incCount={incCount} />
       {
-        count == 0 ? (<Dhome />) : count == 1 ? (<Products />) : count == 2 ? (<Learnings />) : null
+        count == 0 ? (<Dhome />) : count == 1 ? (<Products />) : count == 2 ? (<Learnings />) : count == 3 ? (<Orders />) : null
       }
     </div>
   );

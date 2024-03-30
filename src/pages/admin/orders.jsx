@@ -34,7 +34,7 @@ const Orders = () => {
     console.log(data)
     try {
       const resp = await axios.post(
-        HOST_URI + "/products/createProduct",
+        HOST_URI + "/orders/",
         data,
         {
           headers: {
@@ -53,8 +53,13 @@ const Orders = () => {
 
   useEffect(() => {
     const getProds = async() => {
-      const resp = await axios.get(HOST_URI + "/products/getProducts");
+      const resp = await axios.get(HOST_URI + "/orders/getAllOrders", {
+        headers: {
+          token: window.localStorage.getItem("token"),
+        },
+      });
       setProducts(resp.data.msg);
+      console.log(resp.data.msg)
     };
     getProds()
   }, [])
@@ -160,7 +165,7 @@ const Orders = () => {
       </div>
       <div className="sections">
         <div className="sec1">
-          <div className="title">Your Products</div>
+          <div className="title">Your Orders</div>
           <table className="tab">
             <tr className="tr">
               <th className="head">Product Name</th>
