@@ -20,7 +20,7 @@
 }
 
 .learn-sec .inwraps .title{
-    font-family: var(--prim-font);
+    font-family: "Playfair Display";
     font-size: 40px;
     width: 60%;
     text-align: center;
@@ -133,7 +133,7 @@
 .cols .row-wrap{
     width: 100%;
     height: max-content;
-    font-family: var(--prim-font);
+    font-family: "Playfair Display";
     display: flex;
     align-items: center;
     gap: 20px;
@@ -150,7 +150,7 @@
 }
 
 .learn-sec .inwraps .label{
-    font-family: var(--prim-font);
+    font-family: "Playfair Display";
     font-size: 20px;
     margin-bottom: 18px;
 }

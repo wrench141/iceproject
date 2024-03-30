@@ -58,7 +58,7 @@
 
 
 .prods .container .products-set .title {
-    font-family: var(--prim-font);
+    font-family: "Playfair Display";
     font-size: 40px;
     margin: 30px 0;
     width: 50%;

@@ -20,7 +20,7 @@
 }
 
 .container .frm .wrap .title{
-    font-family: var(--prim-font);
+    font-family: "Playfair Display";
     font-size: 30px;
     margin-bottom: 20px;
 }
@@ -101,7 +101,7 @@
 
 .container .frm.c .wrap.c h2{
     font-size: 40px;
-    font-family: var(--prim-font);
+    font-family: "Playfair Display";
     color: var(--main-col);
     margin-bottom: 5px;
 }
