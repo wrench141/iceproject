@@ -56,7 +56,10 @@ export default function Home(){
                   restaurant essentials. Crafted from pure, filtered water, our
                   ice cubes ensure a slow melt and minimal dilution.
                 </div>
-                <button className="btn">
+                <button
+                  onClick={() => (window.location.href = "/products")}
+                  className="btn"
+                >
                   Products
                   <div className="arrow"></div>
                 </button>
@@ -76,32 +79,6 @@ export default function Home(){
             <div className="midwrap">
               <img src={subimg} className="img" />
               <div className="txt">
-                <div className="triGrid">
-                  <div className="col">
-                    <p className="cnt">
-                      0+
-                    </p>
-                    <p className="desc">Orders</p>
-                  </div>
-                  <div className="col">
-                    <p className="cnt">
-                      0+
-                    </p>
-                    <p className="desc">Active Users</p>
-                  </div>
-                  <div className="col">
-                    <p className="cnt">
-                      0+
-                    </p>
-                    <p className="desc">Kitchen Tieups</p>
-                  </div>
-                  <div className="col">
-                    <p className="cnt">
-                      0+
-                    </p>
-                    <p className="desc">Restaurent Tieups</p>
-                  </div>
-                </div>
                 <div className="title">
                   Discover Frosty Creations, your one-stop shop for bar and
                   restaurant supplies.
@@ -115,6 +92,24 @@ export default function Home(){
                   finest international purveyors. Experience the pinnacle of
                   luxury with our unparalleled offerings.
                 </p>
+                <div className="triGrid">
+                  <div className="col">
+                    <p className="cnt">0+</p>
+                    <p className="desc">Orders</p>
+                  </div>
+                  <div className="col">
+                    <p className="cnt">0+</p>
+                    <p className="desc">Active Users</p>
+                  </div>
+                  <div className="col">
+                    <p className="cnt">0+</p>
+                    <p className="desc">Kitchen Tieups</p>
+                  </div>
+                  <div className="col">
+                    <p className="cnt">0+</p>
+                    <p className="desc">Restaurent Tieups</p>
+                  </div>
+                </div>
                 <button className="btn">
                   Our Products
                   <div className="arrow"></div>
@@ -144,7 +139,10 @@ export default function Home(){
                   means your drinks stay properly chilled for longer without
                   becoming overly diluted.
                 </div>
-                <button className="btn">
+                <button
+                  className="btn"
+                  onClick={() => (window.location.href = "/products")}
+                >
                   View More
                   <div className="arrow"></div>
                 </button>
@@ -219,6 +217,51 @@ export default function Home(){
                 <button className="btn" onClick={() => submitHandler()}>
                   Contact Us
                 </button>
+              </div>
+            </div>
+          </div>
+          <div className="incont footer">
+            <div className="btns">
+              <p className="title">Liquido</p>
+              <p className="sub">Precision-Carved Ice for Exquisite Sips</p>
+            </div>
+            <div className="innersec">
+              <div className="wrap">
+                <div className="row">
+                  <div className="card">
+                    <div className="title">Pages</div>
+                    <a className="sub">Home</a>
+                    <a className="sub">Products</a>
+                    <a className="sub">Recipies</a>
+                    <a className="sub">Orders</a>
+                  </div>
+                  <div className="card">
+                    <div className="title">Need Help?</div>
+                    <a className="sub">Contact Us</a>
+                    <a className="sub">Testimonials</a>
+                  </div>
+                  <div className="card">
+                    <div className="title">Our Services</div>
+                    <a className="sub">Products</a>
+                    <a className="sub">Learning</a>
+                  </div>
+                  <div className="card">
+                    <div className="title">Company</div>
+                    <a className="sub">About Us</a>
+                    <a className="sub">Coverage</a>
+                  </div>
+                  <div className="card">
+                    <div className="title">Social Media</div>
+                    <a className="sub">
+                      <div className="tg">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                      </div>
+                      <div className="tg">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import axios from  "axios";
 import HOST_URI from "../components/url"
-import banner from "../../assets/banner.jpg";
+import banner from "../../assets/prod.jpeg";
 
 
 export default function Products(){
@@ -117,22 +117,51 @@ export default function Products(){
                   </p>
                 </div>
                 <div className="set" ref={rowRef}>
-                  {products.map((product, i) => (
-                    <a className="a" style={{textDecoration: "none", color: "white"}} href={"/product/" + product._id}>
-                      <div className="product sel" key={i}>
-                        <img
-                          src={product.prodimages[0]}
-                          alt=""
-                          className="img"
-                        />
-                        <div className="rw">
-                          <p className="ptitle">{product.prodname}</p>
-                          <p className="ptitle price">₹{product.price}</p>
-                        </div>
-                        <button className="pbtn">View More</button>
-                      </div>
-                    </a>
-                  ))}
+                  {products.map((product, i) => {
+                    if (parseInt(product.price) > 0){
+                      return (
+                        <a
+                          className="a"
+                          style={{ textDecoration: "none", color: "white" }}
+                          href={"/product/" + product._id}
+                        >
+                          <div className="product sel" key={i}>
+                            <img
+                              src={product.prodimages[0]}
+                              alt=""
+                              className="img"
+                            />
+                            <div className="rw">
+                              <p className="ptitle">{product.prodname}</p>
+                              <p className="ptitle price">₹{product.price}</p>
+                            </div>
+                            <button className="pbtn">View More</button>
+                          </div>
+                        </a>
+                      );
+                    }else{
+                      return (
+                        <a
+                          className="a"
+                          style={{ textDecoration: "none", color: "white" }}
+                          href={"/product/" + product._id}
+                        >
+                          <div className="product sel" key={i}>
+                            <img
+                              src={product.prodimages[0]}
+                              alt=""
+                              className="img"
+                            />
+                            <div className="rw">
+                              <p className="ptitle">{product.prodname}</p>
+                              <p className="ptitle price">Comming Soon</p>
+                            </div>
+                            <button className="pbtn">View More</button>
+                          </div>
+                        </a>
+                      );
+                    }
+                  })}
                 </div>
               </div>
             </div>

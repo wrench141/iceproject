@@ -10,7 +10,15 @@ export default function Navbar(){
 
     return (
       <div className="nav">
-        <p className="title">✦ Liquido</p>
+        <a
+          href="/"
+          style={{
+            color: "white",
+            textDecoration: "none",
+          }}
+        >
+          <p className="title">✦ Liquido</p>
+        </a>
         <div className="icon" onClick={() => setOpen(!open)}>
           <ion-icon name="menu-outline"></ion-icon>
         </div>
@@ -23,7 +31,15 @@ export default function Navbar(){
           }
         >
           <div className="nrow">
-            <p className="n title">✦ Liquido</p>
+            <a
+              href="/"
+              style={{
+                color: "white",
+                textDecoration: "none",
+              }}
+            >
+              <p className="n title">✦ Liquido</p>
+            </a>
             <div className="icon close" onClick={() => setOpen(!open)}>
               <ion-icon name="close-outline"></ion-icon>
             </div>
@@ -55,7 +71,7 @@ export default function Navbar(){
                     className="bdr f"
                     onClick={() => {
                       window.localStorage.removeItem("token");
-                      window.location.href = "/verifyEmail"
+                      window.location.href = "/verifyEmail";
                     }}
                   >
                     Logout
