@@ -104,65 +104,53 @@ export default function Products(){
         <div className="container">
           <div className="wrapper">
             <div className="products-set">
-              <div className="title">
-                Discover Glacial Perfection's Finest Crystalline Clarity
-                Revealed
-              </div>
+              <div className="title">Our Products</div>
               <div className="imgsec">
-                <div className="section1">
-                  <img src={banner} alt="" className="banner" />
-                  <p className="sub">
-                    We have multi-shaped ice cubes being provided as monthly
-                    subcriptions all over india.
-                  </p>
-                </div>
-                <div className="set" ref={rowRef}>
-                  {products.map((product, i) => {
-                    if (parseInt(product.price) > 0){
-                      return (
-                        <a
-                          className="a"
-                          style={{ textDecoration: "none", color: "white" }}
-                          href={"/product/" + product._id}
-                        >
-                          <div className="product sel" key={i}>
-                            <img
-                              src={product.prodimages[0]}
-                              alt=""
-                              className="img"
-                            />
-                            <div className="rw">
-                              <p className="ptitle">{product.prodname}</p>
-                              <p className="ptitle price">₹{product.price}</p>
-                            </div>
-                            <button className="pbtn">View More</button>
+                {products.map((product, i) => {
+                  if (parseInt(product.price) > 0) {
+                    return (
+                      <a
+                        className="a"
+                        style={{ textDecoration: "none", color: "white" }}
+                        href={"/product/" + product._id}
+                      >
+                        <div className="product sel" key={i}>
+                          <img
+                            src={product.prodimages[0]}
+                            alt=""
+                            className="img"
+                          />
+                          <div className="rw">
+                            <p className="ptitle">{product.prodname}</p>
+                            <p className="ptitle price">₹{product.price}</p>
                           </div>
-                        </a>
-                      );
-                    }else{
-                      return (
-                        <a
-                          className="a"
-                          style={{ textDecoration: "none", color: "white" }}
-                          href={"/product/" + product._id}
-                        >
-                          <div className="product sel" key={i}>
-                            <img
-                              src={product.prodimages[0]}
-                              alt=""
-                              className="img"
-                            />
-                            <div className="rw">
-                              <p className="ptitle">{product.prodname}</p>
-                              <p className="ptitle price">Comming Soon</p>
-                            </div>
-                            <button className="pbtn">View More</button>
+                          <button className="pbtn">View More</button>
+                        </div>
+                      </a>
+                    );
+                  } else {
+                    return (
+                      <a
+                        className="a"
+                        style={{ textDecoration: "none", color: "white" }}
+                        href={"/product/" + product._id}
+                      >
+                        <div className="product sel" key={i}>
+                          <img
+                            src={product.prodimages[0]}
+                            alt=""
+                            className="img"
+                          />
+                          <div className="rw">
+                            <p className="ptitle">{product.prodname}</p>
+                            <p className="ptitle price">Comming Soon</p>
                           </div>
-                        </a>
-                      );
-                    }
-                  })}
-                </div>
+                          <button className="pbtn">View More</button>
+                        </div>
+                      </a>
+                    );
+                  }
+                })}
               </div>
             </div>
           </div>

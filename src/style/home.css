@@ -241,16 +241,11 @@
     height: max-content;
     display: grid;
     font-family: "Montserrat";
-    background-color: var(--third);
-    padding: 20px 30px;
-    position: fixed;
-    bottom: 10px;
     border-radius: 10px;
-    left: 20px;
+    margin-bottom: 20px;
     grid-template-columns: repeat(4, max-content);
     font-family: "Playfair Display";
-    gap: 40px;
-    border: 1.5px solid var(--for);
+    gap: 60px;
 }
 
 .hcontainer .incont.sec .triGrid .col .desc{

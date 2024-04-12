@@ -4,7 +4,7 @@ import subimg from "../../assets/Dusse ice bucket.jpeg";
 import Navbar from "../components/navbar";
 import img2 from "../../assets/ice.png"
 import dry from "../../assets/dry.jpg";
-import sphere from "../../assets/sphere.jpg";
+import sphere from "../../assets/bullet.jpg";
 import { useState } from "react";
 import axios from "axios";
 import HOST_URI from "../components/url";
@@ -66,7 +66,7 @@ export default function Home(){
               </div>
             </div>
           </div>
-          <div className="strip">
+          {/* <div className="strip">
             <p className="scroll">
               ✦ Customized Ice cubes ✦ Top recipies ✦ Luxurious Bar-Resto
               Equipments ✦ Customized Ice cubes ✦ Top recipies ✦ Luxurious
@@ -74,6 +74,52 @@ export default function Home(){
               Luxurious Bar-Resto Equipments ✦ Customized Ice cubes ✦ Top
               recipies ✦ Luxurious Bar-Resto Equipments ✦
             </p>
+          </div> */}
+          <div className="incont prods">
+            <div className="btns">
+              <button className="btn">
+                <div className="arrow"></div>
+              </button>
+              <button className="btn">
+                <div className="arrow rev"></div>
+              </button>
+              <p className="title">Products</p>
+            </div>
+            <div className="prodSec">
+              <div className="primWrap">
+                <div className="mtit">
+                  Bullet Ice ✦{" "}
+                  <span style={{ color: "var(--main-col)" }}> 40/- </span>
+                </div>
+                <div className="desc">
+                  Witness nature's rare frozen spectacle - bullet ice for just
+                  ₹40/kg! These elongated icy spindles, formed in extreme cold
+                  and wind, lend a mesmerizing touch. Transparent, opaque or
+                  milky, bullet ice elevates any display at an unbeatable price.
+                  Grab this exclusive marvel before stocks run out!
+                </div>
+                <button
+                  className="btn"
+                  onClick={() => (window.location.href = "/products")}
+                >
+                  View More
+                  <div className="arrow"></div>
+                </button>
+              </div>
+              <div className="secScroller">
+                <div className="scroller">
+                  <div className="selImg">
+                    <img src={sphere} alt="" className="img" />
+                  </div>
+                  <div className="other">
+                    <img src={dry} alt="" className="img" />
+                  </div>
+                  <div className="other">
+                    <img src={img2} alt="" className="img" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="incont sec">
             <div className="midwrap">
@@ -110,79 +156,44 @@ export default function Home(){
                     <p className="desc">Restaurent Tieups</p>
                   </div>
                 </div>
-                <button className="btn">
-                  Our Products
-                  <div className="arrow"></div>
-                </button>
               </div>
             </div>
           </div>
-          <div className="incont prods">
+          <div className="incont footer cont">
             <div className="btns">
-              <button className="btn">
-                <div className="arrow"></div>
-              </button>
-              <button className="btn">
-                <div className="arrow rev"></div>
-              </button>
-              <p className="title">Products</p>
-            </div>
-            <div className="prodSec">
-              <div className="primWrap">
-                <div className="mtit">
-                  Spherical Ice ✦{" "}
-                  <span style={{ color: "var(--main-col)" }}> 1000/- </span>
-                </div>
-                <div className="desc">
-                  The distinctive spherical shape not only looks striking in the
-                  glass, but also melts slower than traditional ice cubes. This
-                  means your drinks stay properly chilled for longer without
-                  becoming overly diluted.
-                </div>
-                <button
-                  className="btn"
-                  onClick={() => (window.location.href = "/products")}
-                >
-                  View More
-                  <div className="arrow"></div>
-                </button>
-              </div>
-              <div className="secScroller">
-                <div className="scroller">
-                  <div className="selImg">
-                    <img src={sphere} alt="" className="img" />
-                  </div>
-                  <div className="other">
-                    <img src={dry} alt="" className="img" />
-                  </div>
-                  <div className="other">
-                    <img src={img2} alt="" className="img" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="incont cont">
-            <div className="btns">
-              <p className="title">Contact us</p>
+              <p className="title">Liquido</p>
+              <p className="sub">Precision-Carved Ice for Exquisite Sips</p>
             </div>
             <div className="innersec">
               <div className="wrap">
-                <p className="em">Info@gmail.com ✦ 9876543211</p>
                 <div className="row">
                   <div className="card">
-                    <div className="title">Customer support</div>
-                    <div className="sub">
-                      Our support team is available around the clock to address
-                      any concerns or queries.
-                    </div>
+                    <div className="title">Pages</div>
+                    <a className="sub">Home</a>
+                    <a className="sub">Products</a>
+                    <a className="sub">Recipies</a>
+                    <a className="sub">Orders</a>
                   </div>
                   <div className="card">
-                    <div className="title">Feedback/Suggestions</div>
-                    <div className="sub">
-                      Our support team is available around the clock to address
-                      any concerns or queries.
-                    </div>
+                    <div className="title">Need Help?</div>
+                    <a className="sub">Contact Us</a>
+                    <a className="sub">Testimonials</a>
+                  </div>
+                  <div className="card">
+                    <div className="title">Company</div>
+                    <a className="sub">About Us</a>
+                    <a className="sub">Coverage</a>
+                  </div>
+                  <div className="card">
+                    <div className="title">Social Media</div>
+                    <a className="sub">
+                      <div className="tg">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                      </div>
+                      <div className="tg">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -220,51 +231,15 @@ export default function Home(){
               </div>
             </div>
           </div>
-          <div className="incont footer">
+          {/* <div className="incont footer">
             <div className="btns">
               <p className="title">Liquido</p>
               <p className="sub">Precision-Carved Ice for Exquisite Sips</p>
             </div>
             <div className="innersec">
-              <div className="wrap">
-                <div className="row">
-                  <div className="card">
-                    <div className="title">Pages</div>
-                    <a className="sub">Home</a>
-                    <a className="sub">Products</a>
-                    <a className="sub">Recipies</a>
-                    <a className="sub">Orders</a>
-                  </div>
-                  <div className="card">
-                    <div className="title">Need Help?</div>
-                    <a className="sub">Contact Us</a>
-                    <a className="sub">Testimonials</a>
-                  </div>
-                  <div className="card">
-                    <div className="title">Our Services</div>
-                    <a className="sub">Products</a>
-                    <a className="sub">Learning</a>
-                  </div>
-                  <div className="card">
-                    <div className="title">Company</div>
-                    <a className="sub">About Us</a>
-                    <a className="sub">Coverage</a>
-                  </div>
-                  <div className="card">
-                    <div className="title">Social Media</div>
-                    <a className="sub">
-                      <div className="tg">
-                        <ion-icon name="logo-whatsapp"></ion-icon>
-                      </div>
-                      <div className="tg">
-                        <ion-icon name="logo-facebook"></ion-icon>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <div className="wrap"></div>
             </div>
-          </div>
+          </div> */}
         </div>
       </>
     );
