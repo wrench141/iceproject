@@ -104,7 +104,7 @@ export default function Products(){
         <div className="container">
           <div className="wrapper">
             <div className="products-set">
-              <div className="title">Our Products</div>
+              <div className="title">Our range of ice products</div>
               <div className="imgsec">
                 {products.map((product, i) => {
                   if (parseInt(product.price) > 0) {
@@ -115,14 +115,18 @@ export default function Products(){
                         href={"/product/" + product._id}
                       >
                         <div className="product sel" key={i}>
-                          <img
-                            src={product.prodimages[0]}
-                            alt=""
+                          <div
+                            style={{
+                              backgroundImage: `url(${product.prodimages[0]})`,
+                            }}
                             className="img"
                           />
                           <div className="rw">
                             <p className="ptitle">{product.prodname}</p>
-                            <p className="ptitle price">₹{product.price}</p>
+                            <p className="ptitle price">
+                              <p>Price</p>
+                              <p>₹{product.price}</p>
+                            </p>
                           </div>
                           <button className="pbtn">View More</button>
                         </div>
@@ -136,8 +140,10 @@ export default function Products(){
                         href={"/product/" + product._id}
                       >
                         <div className="product sel" key={i}>
-                          <img
-                            src={product.prodimages[0]}
+                          <div
+                            style={{
+                              backgroundImage: `url(${product.prodimages[0]})`,
+                            }}
                             alt=""
                             className="img"
                           />

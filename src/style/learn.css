@@ -9,6 +9,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    --s: 75px;
+    --_c: #0000, #000e39 1deg 79deg, #0000 81deg;
+    --g0: conic-gradient(from 140deg at 50% 87.5%, var(--_c));
+    --g1: conic-gradient(from 140deg at 50% 81.25%, var(--_c));
+    --g2: conic-gradient(from 140deg at 50% 75%, var(--_c));
+    --g3: conic-gradient(at 10% 20%, #0000 75%, #000e39 0);
+    background:
+        var(--g0) 0 calc(var(--s)/-4), var(--g0) var(--s) calc(3*var(--s)/4),
+        var(--g1), var(--g1) var(--s) var(--s),
+        var(--g2) 0 calc(var(--s)/ 4), var(--g2) var(--s) calc(5*var(--s)/4),
+        var(--g3) calc(var(--s)/-10) var(--s),
+        var(--g3) calc(9*var(--s)/10) calc(2*var(--s)),
+        repeating-conic-gradient(from 45deg, var(--sec-col) 0 25%, var(--third) 0 50%);
+    background-size: calc(2*var(--s)) calc(2*var(--s));
 }
 
 .inwraps{
@@ -20,7 +34,7 @@
 }
 
 .learn-sec .inwraps .title{
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
     font-size: 40px;
     width: 60%;
     text-align: center;
@@ -100,9 +114,9 @@
     margin-top: 10px;
     border-radius: 50px;
     padding: 0 20px;
-    background: #000a2873;
+    background: #000a28;
     color: white;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     border: 2px solid var(--for);
 }
 
@@ -116,7 +130,7 @@
     justify-content: center;
     font-size: 12px;
     align-items: center;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     color: #bfcfff;
     color: var;
     border: 2px solid #bfcfff91;
@@ -133,7 +147,7 @@
 .cols .row-wrap{
     width: 100%;
     height: max-content;
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
     display: flex;
     align-items: center;
     gap: 20px;
@@ -150,7 +164,7 @@
 }
 
 .learn-sec .inwraps .label{
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
     font-size: 20px;
     margin-bottom: 18px;
 }
@@ -176,7 +190,7 @@
 }
 
 .learn-sec .inwraps .ingr-row .btn{
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     font-weight: 700;
     width: max-content;
     height: max-content;
@@ -196,7 +210,7 @@
 .cols .pbtn{
     width: max-content;
     height: max-content;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     color: var(--sec-col);
     background: var(--main-col);
     padding: 9px 15px;
@@ -268,7 +282,7 @@
     border: none;
     border-radius: 10px;
     color: red;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     border: 2px solid #ff000080;
     font-weight: 700;
 }
@@ -276,14 +290,14 @@
 .learn-sec .inwraps .ingr-row .card .title{
     width: 100%;
     font-size: 19px;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     font-weight: 600;
     text-align: left;
     margin-bottom: 10px;
 }
 
 .learn-sec .inwraps .ingr-row .card .type{
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     font-size: 13px;
     margin-bottom: 5px;
 }
@@ -323,7 +337,7 @@
         width: 100%;
     }
     .learn-sec .inwraps .ingr-row .igr{
-        font-family: "Montserrat";
+        font-family: "Public Sans";
         font-size:17px;
     }
     .learn-sec .inwraps .ingr-row .card .popup .center  {

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 @font-face {
@@ -39,6 +39,20 @@
     color: white;
     overflow-x: hidden;
     font-size: 30px;
+    --s: 67px;
+    --c1: #000029;
+    --c2: #000508;
+
+    --_g:
+        var(--c1) 0% 5%, var(--c2) 6% 15%, var(--c1) 16% 25%, var(--c2) 26% 35%, var(--c1) 36% 45%,
+        var(--c2) 46% 55%, var(--c1) 56% 65%, var(--c2) 66% 75%, var(--c1) 76% 85%, var(--c2) 86% 95%,
+        #0000 96%;
+    background:
+        radial-gradient(50% 50% at 100% 0, var(--_g)),
+        radial-gradient(50% 50% at 0 100%, var(--_g)),
+        radial-gradient(50% 50%, var(--_g)),
+        radial-gradient(50% 50%, var(--_g)) calc(var(--s)/2) calc(var(--s)/2) var(--c1);
+    background-size: var(--s) var(--s);
 }
 
 .hcontainer .incont{
@@ -62,20 +76,23 @@
 }
 
 .hcontainer .incont .sec .title{
-    font-family: "Playfair Display";
-    font-size: 45px;
+    font-family: "Antic Didone";
+    font-size: 35px;
     position: relative;
     z-index: 2;
     margin-bottom: 20px;
-    font-weight: 500;
+    width: 70%;
+    font-weight: 600;
     color: var(--main-col);
 }
 .hcontainer .incont .sec .sub{
     position: relative;
     z-index: 2;
-    font-size: 18px;
+    font-size: 17.4px;
+    font-family: "Public Sans";
+    line-height: 20px;
+    font-weight: 200;
     width: 70%;
-    font-family: "Antic Didone";
 }
 .hcontainer .incont .sec .mid{
     width: 50%;
@@ -94,9 +111,11 @@
 }
 
 .hcontainer .incont .sec .mid .subtitle{
-    font-size: 18px;
     margin: 20px 0;
-    font-family: "Antic Didone";
+    font-size: 17.4px;
+    font-family: "Public Sans";
+    line-height: 20px;
+    font-weight: 200;
 }
 
 .btn{
@@ -105,7 +124,7 @@
     border: none;
     border-radius: 20px;
     color: white;
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
     font-size: 18px;
     display: flex;
     gap: 20px;
@@ -240,11 +259,11 @@
     width: max-content;
     height: max-content;
     display: grid;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     border-radius: 10px;
     margin-bottom: 20px;
     grid-template-columns: repeat(4, max-content);
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
     gap: 60px;
 }
 
@@ -273,7 +292,7 @@
 
 .hcontainer .incont.sec .txt .title{
     font-size: 25px;
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
 
 }
 
@@ -300,6 +319,7 @@
     align-items: center;
     flex-direction: row-reverse;
     gap: 20px;
+    padding-left: 50px;
 }
 
 .incont.prods .prodSec{
@@ -321,7 +341,7 @@
 
 .incont.prods .prodSec .primWrap .mtit{
     font-size: 25px;
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
 }
 
 .incont.prods .prodSec .primWrap .desc{
@@ -373,7 +393,7 @@
 }
 
 .btns .title{
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
     font-size: 35px;
     color: var(--main-col);
 }
@@ -459,7 +479,7 @@
     border: 2px solid var(--for);
     border-radius: 14px;
     color: white;
-    font-family:"Montserrat";
+    font-family:"Public Sans";
     background: var(--sec-col);
     font-size: 15px;
 }
@@ -469,7 +489,7 @@
     border: 2px solid var(--for);
     border-radius: 14px;
     color: var(--main-col);
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     background: var(--sec-col);
     font-size: 15px;
     width: 100%;
@@ -487,7 +507,7 @@
     border-radius: 10px;
     font-size: 15px;
     margin-top: 10px;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
 }
 
 .heroSec {
@@ -506,7 +526,7 @@
 .hcontainer .incont.footer .btns{
     font-size: 30px;
     margin-bottom: 30px;
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
 }
 
 .hcontainer .incont.footer .innersec .wrap .row {
@@ -516,7 +536,7 @@
     padding-left: 30px;
     font-size: 17px;
     gap: 100px;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
 }
 
 .hcontainer .incont.footer .innersec .wrap .row .card{
@@ -534,7 +554,7 @@
 .hcontainer .incont.footer .btns .sub{
     font-size: 13px;
     margin-top: 5px;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
 } 
 
 .hcontainer .incont.footer .innersec .wrap .row .card .sub{
@@ -665,11 +685,11 @@
         grid-template-columns: repeat(2, max-content);
         gap: 40px;
         position: static;
-        font-family: "Playfair Display";
+        font-family: "Public Sans";
         margin-bottom: 30px;
     }
     .hcontainer .incont.sec .triGrid .col .desc{
-        font-family: "Montserrat";
+        font-family: "Public Sans";
         font-size: 13px;
     }
 }

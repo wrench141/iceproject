@@ -20,13 +20,13 @@
 }
 
 .container .frm .wrap .title{
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
     font-size: 30px;
     margin-bottom: 20px;
 }
 
 .container .frm .wrap .sub{
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     color: #f1f1f1;
 }
 
@@ -46,7 +46,7 @@
     border: 2px solid var(--for);
     border-radius: 15px;
     color: white;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     background: var(--sec-col);
     font-size: 17px;
 }
@@ -55,7 +55,7 @@
     width: max-content;
     height: max-content;
     padding: 9px 19px;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     background: var(--main-col);
     color: var(--sec-col);
     font-size: 14px;
@@ -101,13 +101,13 @@
 
 .container .frm.c .wrap.c h2{
     font-size: 40px;
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
     color: var(--main-col);
     margin-bottom: 5px;
 }
 
 .container .frm.c .wrap.c .nm{
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     font-size: 14px;
     color: rgb(255, 255, 255);
     margin-bottom: 20px;
@@ -147,7 +147,7 @@
     border: 2px solid var(--for);
     border-radius: 10px;
     color: white;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     background: var(--sec-col);
     font-size: 20px;
     text-align: center;
@@ -157,7 +157,7 @@
 .container .msg{
     width: 20rem;
     height: max-content;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     font-size: 13px;
     color: var(--main-col);
     margin-top: 5px; 

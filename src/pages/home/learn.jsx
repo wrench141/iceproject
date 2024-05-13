@@ -18,9 +18,11 @@ export default function Learn(){
       <Navbar />
       <div className="learn-sec">
         <div className="inwraps">
-          <p className="title">
-            Mix Mastery: Custom Cocktails & Mocktails at Your Fingertips
-          </p>
+          <p className="title" style={{fontWeight: 500}}>Cocktail & Mocktail Mix</p>
+          <p className="sub" style={{
+            fontFamily: "Public Sans",
+            fontSize: "15px"
+          }}>Custom Cocktails & Mocktails at Your Fingertips</p>
           <div className="search">
             <input
               type="text"
@@ -34,13 +36,7 @@ export default function Learn(){
             <div className="tag">Citrus Smash</div>
             <div className="tag">Pomegranate Spritzer</div>
           </div>
-          {count == 0 ? (
-            <Step1
-              next={next}
-            />
-          ) : (
-            <Step2 back={back}  />
-          )}
+          {count == 0 ? <Step1 next={next} /> : <Step2 back={back} />}
         </div>
       </div>
     </>

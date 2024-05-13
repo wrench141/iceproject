@@ -15,7 +15,7 @@
 
 .inwrap .options .title{
     font-size: 30px;
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
 }
 
 
@@ -30,7 +30,7 @@
 
 .inwrap .sum .title{
     font-size: 20px;
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
 }
 
 .inwrap .sum .pwrap{
@@ -53,7 +53,7 @@
     width: 100%;
     height: 30px;
     font-size: 15px;
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
     background-color: var(--main-col);
     border: none;
     display: flex;
@@ -106,7 +106,7 @@
     height: max-content;
     display: flex;
     justify-content: space-between;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     font-size: 12px;
     height: 35px;
 }
@@ -119,7 +119,7 @@
 }
 
 .inwrap .sum .pwrap .dat{
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     margin-top: 10px;
     width: 100%;
     height: max-content;
@@ -136,7 +136,7 @@
     font-size: 15.5px;
     font-weight: 600;
     margin-bottom: 10px;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     color: var(--main-col);
 }
 
@@ -192,7 +192,7 @@
 
 .collapsableCont .row .title{
     font-size: 18px;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     font-weight: 600;
 }
 
@@ -202,7 +202,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     padding: 20px 0;
     padding-bottom: 30px;
 }
@@ -229,7 +229,7 @@
     left: 0;
     background: var(--sec-col);
     color: var(--main-col);
-    font-family: "Playfair Display";
+    font-family: "Public Sans";
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -254,7 +254,7 @@
     background: var(--main-col);
     color: var(--sec-col);
     border-radius: 10px;
-    font-family: "Montserrat";
+    font-family: "Public Sans";
     font-weight: 600;
 }
 
