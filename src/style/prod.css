@@ -107,15 +107,15 @@
     width: max-content;
     height: 70vh;
 }
+*/
 
 .prods .container .products-set .title.prods{
     width: 100%;
     display: flex;
     gap: 20px; 
+    font-size: 20px;
 }
- */
 
-c
 
 .prods .container .products-set .set {
     width: 100%;
@@ -334,7 +334,7 @@ c
     border-radius: 20px;
     height: max-content;
     /* background: linear-gradient(to right, rgb(0, 0, 72), var(--third)); */
-    padding: 20px 30px;
+    padding: 20px 0;
 }
 
 .prodct .pdata .title{
@@ -383,9 +383,10 @@ c
 }
 
 .prodct .pdata .sub{
-    font-family: "Antic Didone";
-    font-size: 17px;
+    font-family: "Public Sans";
+    font-size: 16px;
     line-height: 150%;
+    font-weight: 300;
     color: var(--main-col);
     margin-top: 15px;
 }

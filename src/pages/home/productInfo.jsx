@@ -67,7 +67,7 @@ export default function Product(){
                 <button className={"btn"} style={{ width: "40px" }}>
                   <div className="arrow rev" />
                 </button>
-                Product ✦ Details
+                Product Details
               </div>
               {product != null ? (
                 <div className="prodct">
@@ -87,11 +87,10 @@ export default function Product(){
                     style={{
                       display: "flex",
                       flexDirection: "column",
-                      // justifyContent: "space-between",
                     }}
                   >
                     <div>
-                      <div className="title" style={{ margin: 0 }}>
+                      <div className="title" style={{ margin: 0, textTransform: "uppercase", fontWeight: 600 }}>
                         {product.prodname}
                       </div>
                       <div className="wrap">
