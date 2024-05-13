@@ -115,7 +115,7 @@ export default function Product(){
                         <label htmlFor="" className="lab">
                           Price
                         </label>
-                        <p className="price">{product.price}</p>
+                        <p className="price">{product.price}/Kg</p>
                       </div>
                       <div className="col">
                         <label htmlFor="" className="lab">

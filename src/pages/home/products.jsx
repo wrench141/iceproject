@@ -125,7 +125,7 @@ export default function Products(){
                             <p className="ptitle">{product.prodname}</p>
                             <p className="ptitle price">
                               <p>Price</p>
-                              <p>₹{product.price}</p>
+                              <p>₹{product.price}/Kg</p>
                             </p>
                           </div>
                           <button className="pbtn">View More</button>
