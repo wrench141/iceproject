@@ -544,10 +544,16 @@
     .prodct .pdata .wrap:last-child{
         margin-top: 20px;
     }
-    
-    .prodct .pdata .wrap.wdt div .lab.n{
-        display: none;
+
+    .prodct .pdata .wrap.wdt div.col.mb,
+    .prodct .pdata .wrap.wdt .col.mb .pbtn{
+        height: 45px;
+        width: 100%;
     }
+    
+    /* .prodct .pdata .wrap.wdt div .lab.n{
+        display: none;
+    } */
 
     .prodct .pdata .wrap.wdt{
         margin-top: 30px;

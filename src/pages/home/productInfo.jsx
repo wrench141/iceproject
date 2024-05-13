@@ -160,7 +160,7 @@ export default function Product(){
                           {btxt}
                         </button>
                       </div>
-                      <div className="col">
+                      <div className="col mb">
                         <label
                           htmlFor=""
                           style={{ color: "transparent" }}
