@@ -1,12 +1,26 @@
 import { useRef } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import "../../style/nav.css"
-
+import axios from "axios"
+import HOST_URI from "./url";
 
 export default function Navbar(){
 
     const [open, setOpen] = useState(false)
-    const token = window.localStorage.getItem("token")
+    const token = window.localStorage.getItem("token");
+    const [isAdmin, setAdmin] = useState(false);
+
+    useEffect(() => {
+      (async() => {
+        const resp = await axios.get(HOST_URI + "/isAdmin", {
+          headers: {
+            "token" : window.localStorage.getItem("token")
+          }
+        });
+        setAdmin(resp.data.msg)
+      })()
+    }, [])
 
     return (
       <div className="nav">
@@ -62,6 +76,14 @@ export default function Navbar(){
                 ✦ Orders
                 <ion-icon name="chevron-forward-outline"></ion-icon>
               </a>
+              {
+                isAdmin ? (
+                  <a href="/dashboard" className="link sel">
+                    ✦ Dashboard
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                  </a>
+                ) : null
+              }
               <div className="btns">
                 {/* <a href="/cart" className="link">
                   <button className="bdr">Cart</button>
@@ -100,14 +122,18 @@ export default function Navbar(){
           <a href="/learnings" className="link sel">
             Learn
           </a>
+          {
+            isAdmin ? (
+              <a href="/dashboard" className="link sel">
+                Dashboard
+              </a>
+            ) : null
+          }
         </div>
         <div>
           <a href="/orders" className="link sel">
             Orders
           </a>
-          {/* <a href="/cart" className="link cart sel">
-            <ion-icon name="cart-outline"></ion-icon>
-          </a> */}
         </div>
       </div>
     );

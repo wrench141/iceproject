@@ -115,7 +115,9 @@ export default function Product(){
                         <label htmlFor="" className="lab">
                           Price
                         </label>
-                        <p className="price">{product.price}/Kg</p>
+                        <p className="price">{
+                          product.price > 0 ? product.price +"/Kg" : "SOON"
+                        }</p>
                       </div>
                       <div className="col">
                         <label htmlFor="" className="lab">
@@ -168,9 +170,10 @@ export default function Product(){
                         >
                           Add to cart
                         </label>
-                        <a href={"/order/"+product._id}>
-                          <button className="pbtn">Order Now</button>
-                        </a>
+                        <button onClick={() => {
+                          window.localStorage.setItem("quantity", quantity);
+                          window.location.href = "/order/" + product._id;
+                        }} className="pbtn">Order Now</button>
                       </div>
                     </div>
                   </div>

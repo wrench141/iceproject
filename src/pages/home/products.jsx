@@ -107,55 +107,53 @@ export default function Products(){
               <div className="title">Our range of ice products</div>
               <div className="imgsec">
                 {products.map((product, i) => {
-                  if (parseInt(product.price) > 0) {
-                    return (
-                      <a
-                        className="a"
-                        style={{ textDecoration: "none", color: "white" }}
-                        href={"/product/" + product._id}
-                      >
-                        <div className="product sel" key={i}>
-                          <div
-                            style={{
-                              backgroundImage: `url(${product.prodimages[0]})`,
-                            }}
-                            className="img"
-                          />
-                          <div className="rw">
-                            <p className="ptitle">{product.prodname}</p>
+                  return (
+                    <a
+                      className="a"
+                      style={{
+                        textDecoration: "none",
+                        color: "white",
+                        display: "block",
+                        width: "max-content",
+                      }}
+                      href={"/product/" + product._id}
+                    >
+                      <div className="product sel" key={i}>
+                        <div
+                          style={{
+                            backgroundImage: `url(${product.prodimages[0]})`,padding: "0px", display: "flex", alignItems: "flex-start"
+                          }}
+                          className="img">
+                            {
+                              product.prodname == "Bullet Ice" ? (
+                                <p style={{
+                                  fontFamily: "Public Sans",
+                                  background: "var(--third)",
+                                  padding: "7px 13px",
+                                  width: "max-content",
+                                  fontSize: "14px",
+                                  borderBottomRightRadius: "15px"
+                                }}>Recommended</p>
+                              ) : null
+                            }
+                          </div>
+                        <div className="rw">
+                          <p className="ptitle">{product.prodname}</p>
+                          {product.price > 0 ? (
                             <p className="ptitle price">
                               <p>Price</p>
                               <p>₹{product.price}/Kg</p>
                             </p>
-                          </div>
-                          <button className="pbtn">View More</button>
+                          ) : (
+                            <p className="ptitle price">
+                              <p>Comming Soon</p>
+                            </p>
+                          )}
                         </div>
-                      </a>
-                    );
-                  } else {
-                    return (
-                      <a
-                        className="a"
-                        style={{ textDecoration: "none", color: "white" }}
-                        href={"/product/" + product._id}
-                      >
-                        <div className="product sel" key={i}>
-                          <div
-                            style={{
-                              backgroundImage: `url(${product.prodimages[0]})`,
-                            }}
-                            alt=""
-                            className="img"
-                          />
-                          <div className="rw">
-                            <p className="ptitle">{product.prodname}</p>
-                            <p className="ptitle price">Comming Soon</p>
-                          </div>
-                          <button className="pbtn">View More</button>
-                        </div>
-                      </a>
-                    );
-                  }
+                        <button className="pbtn">View More</button>
+                      </div>
+                    </a>
+                  );
                 })}
               </div>
             </div>

@@ -37,6 +37,8 @@ export default function Order(){
         };
         getProduct();
     }, []);
+
+    console.log(window.localStorage.getItem("quantity"));
     
     const order = async() => {
         const resp = await axios.post(
@@ -57,6 +59,7 @@ export default function Order(){
         msgCont.getElementsByClassName("txt")[0].textContent = resp.data.msg
     }
 
+
     return (
       <div className="prods">
         <Navbar />
@@ -64,9 +67,7 @@ export default function Order(){
           <div className="inwrap">
             <div className="hmsg" id="hmsg">
               <ion-icon name="checkmark-circle"></ion-icon>
-              <p className="txt" style={{ fontSize: "30px" }} id="txt">
-                
-              </p>
+              <p className="txt" style={{ fontSize: "30px" }} id="txt"></p>
               <button
                 onClick={() => (window.location.href = "/orders")}
                 className="mbtn"
@@ -226,7 +227,7 @@ export default function Order(){
                 <div className="subtlt">
                   <div className="row">
                     <p className="sub">SubTotal</p>
-                    <p className="sub">₹ {product.price}</p>
+                    <p className="sub">₹ {parseInt(product.price) * parseInt(window.localStorage.getItem("quantity") || 1)}</p>
                   </div>
                   <div className="row">
                     <p className="sub">Delivery Charges</p>
@@ -234,11 +235,7 @@ export default function Order(){
                   </div>
                   <div className="row">
                     <p className="sub">Discount</p>
-                    <p className="sub">
-                      - ₹{" "}
-                      {(parseInt(product.price) * parseInt(product.discount)) /
-                        100}
-                    </p>
+                    <p className="sub">₹{parseInt(product.discount)}</p>
                   </div>
                 </div>
                 <div className="subtlt">
@@ -253,11 +250,7 @@ export default function Order(){
                       className="sub"
                       style={{ fontWeight: "bolder", fontSize: "14px" }}
                     >
-                      ₹{" "}
-                      {parseInt(product.price) -
-                        (parseInt(product.price) * parseInt(product.discount)) /
-                          100 -
-                        200}
+                      ₹{parseInt(product.discount) > 0 ? (((parseInt(product.price) * (parseInt(window.localStorage.getItem("quantity") || 1))) + 200) * product.discount)/100 : (parseInt(product.price) * (parseInt(window.localStorage.getItem("quantity") || 1))) + 200}
                     </p>
                   </div>
                 </div>
