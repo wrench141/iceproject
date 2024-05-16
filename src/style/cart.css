@@ -217,8 +217,8 @@
     .cart-sections .list .cards{
         display: flex;
         flex-direction: column;
-    };
-    .cart-sections .list .cards .popcard .pcd {
+    }
+    .cart-sections .list .cards .popcard .pcd{
         width: 100%;
     }
 }
