@@ -596,6 +596,9 @@
 
     .hcontainer .incont.footer .innersec .wrap .row{
         padding-left: 0;
+        display: grid;
+        gap: 35px;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .incont.prods .prodSec .primWrap .desc{
