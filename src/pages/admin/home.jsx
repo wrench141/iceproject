@@ -1,7 +1,27 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import DashboardCard from "../components/dashboardCard";
+import HOST_URI from "../components/url";
 
 export default function Dhome() {
-  const percs = [20, 30, 40, 12, 45, 67, 88, 33, 42, 33, 67, 23];
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    (async() => {
+      const resp = await axios.get(HOST_URI + "/analytics", {
+        headers: {
+          token: window.localStorage.getItem("token")
+        }
+      })
+      console.log(resp.data.monthlyAnalytics)
+      // const currentMonth = (new Date()).toString().split(" ")[1];
+      // console.log(resp.data.monthlyAnalytics.filter((item, i) => item.month == currentMonth)[0]);
+      setData(resp.data);
+      console.log(resp.data);
+    })()
+  }, [])
+  const currentMonth = (new Date()).toString().split(" ")[1];
+  // console.log(currentMonth)
   return (
     <div className="sideSection">
       <div className="topbar">
@@ -13,33 +33,42 @@ export default function Dhome() {
       <div className="sections">
         <div className="sec1">
           <div className="cards">
-            <DashboardCard
-              title={"Sales"}
-              amount={"₹1200"}
-              month="March"
-              profit={false}
-              percent={"12"}
-              show={true}
-            />
-            <DashboardCard
-              title={"Orders Placed"}
-              amount={"12"}
-              month="March"
-              profit={true}
-              show={true}
-              percent={"12"}
-            />
-            <DashboardCard
-              title={"Orders Canceled"}
-              amount={"13"}
-              month="March"
-              profit={true}
-              show={true}
-              percent={"12"}
-            />
+            {data != undefined ? (
+              <>
+                <DashboardCard
+                  title={"Monthly Sales"}
+                  totalSales={
+                    data?.monthlyAnalytics.filter(
+                      (item, i) => item.month == currentMonth
+                    )[0].totalSales
+                  }
+                  comparison={
+                    data?.monthlyAnalytics.filter(
+                      (item, i) => item.month == currentMonth
+                    )[0].comparison
+                  }
+                  month={"In " +currentMonth}
+                  show={true}
+                />
+                <DashboardCard
+                  title={"Average Order Value"}
+                  totalSales={Math.round(data?.averageSaleCountPerMonth)}
+                  comparison={1}
+                  month={"Per Month"}
+                  show={false}
+                />
+                <DashboardCard
+                  title={"Yearly Sales"}
+                  totalSales={Math.round(data?.totalSales)}
+                  comparison={1}
+                  month={"In " + (new Date()).toString().split(" ")[3]}
+                  show={false}
+                />
+              </>
+            ) : null}
           </div>
-          <div className="graphSec">
-            <div className="title">Sales Stats</div>
+          <div className="graphSec" style={{ marginTop: "20px" }}>
+            <div className="title">Order Volume Analysis</div>
             <div className="graph">
               <div className="insec">
                 <div className="leftlabs">
@@ -51,11 +80,35 @@ export default function Dhome() {
                   <div className="lib">0</div>
                 </div>
                 <div className="midsec">
-                  {percs.map((lev) => (
+                  {data?.monthlyPercentage.map((lev) => (
                     <div
-                      className="level"
-                      style={{ "--perc": `${lev}%` }}
-                    ></div>
+                      style={{
+                        height: "100%",
+                        width: "100%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "flex-end",
+                        flexDirection: "column",
+                      }}
+                    >
+                      <p
+                        style={{
+                          fontSize: "10px",
+                          marginBottom: "10px",
+                          paddingLeft: "5px",
+                        }}
+                      >
+                        {lev.count > 0
+                          ? `Orders: ${lev.count} Percent: ${
+                              lev.percentage.split(".")[0]
+                            }`
+                          : null}
+                      </p>
+                      <div
+                        className="level"
+                        style={{ "--perc": `${lev.percentage}%` }}
+                      ></div>
+                    </div>
                   ))}
                 </div>
               </div>

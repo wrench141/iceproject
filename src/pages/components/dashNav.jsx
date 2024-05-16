@@ -34,7 +34,7 @@ export default function DashboardNavbar({incCount}){
               ></ion-icon>
               Orders
             </p>
-            <p onClick={() => incCount(4)} className="link">
+            {/* <p onClick={() => incCount(4)} className="link">
               <ion-icon
                 style={{ fontSize: "14px" }}
                 name="reader-outline"
@@ -47,7 +47,7 @@ export default function DashboardNavbar({incCount}){
                 name="storefront-outline"
               ></ion-icon>
               Ads
-            </p>
+            </p> */}
           </div>
         </div>
         <a href="" className="link del">

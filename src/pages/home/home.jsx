@@ -9,6 +9,8 @@ import { useState } from "react";
 import axios from "axios";
 import HOST_URI from "../components/url";
 
+// google.com, pub-6479435131928727, DIRECT, f08c47fec0942fa0
+
 export default function Home(){
 
     const [data, setData] = useState({ email: "", phone: "", desc: "" });

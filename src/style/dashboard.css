@@ -3,11 +3,12 @@
 .dashboard{
     width: 100%;
     height: max-content;
-    min-height: 100vh;
+    min-height: 105vh;
     background-color: #0b0b0b;
     position: relative;
     display: flex;
     overflow-y: hidden;
+    padding-bottom: 30px;
 }
 
 .dashboard .dummy{
