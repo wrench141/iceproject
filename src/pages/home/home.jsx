@@ -123,7 +123,7 @@ export default function Home(){
               </div>
             </div>
           </div>
-          <div className="incont prods">
+          {/* <div className="incont prods">
             <div className="btns">
               <p className="title">Promotions</p>
             </div>
@@ -132,7 +132,7 @@ export default function Home(){
                 <img src={img2} alt="" className="ads" />
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="incont sec">
             <div className="midwrap">
               <img src={subimg} className="img" />
