@@ -2,18 +2,21 @@ import { useState } from "react";
 
 const OrderCard = ({ item }) => {
   const [show, setShow] = useState(false);
+  console.log(item.order.status)
   return (
     <div>
       <div
         className="popcard"
         style={show ? { display: "block" } : { display: "none" }}
+        onClick={() => {
+          setShow(false);
+        }}
       >
         <div className="pcd">
           <p
             className="title"
             onClick={() => {
               setShow(false);
-              console.log(show);
             }}
           >
             <ion-icon
@@ -26,7 +29,10 @@ const OrderCard = ({ item }) => {
             <div className="step completed">
               <div
                 className={
-                  item.order.status == "pending"
+                  item.order.status == "pending" ||
+                  item.order.status === "accepted" ||
+                  item.order.status === "shipped" ||
+                  item.order.status === "delivered"
                     ? "step-icon selc"
                     : "step-icon"
                 }
@@ -36,35 +42,59 @@ const OrderCard = ({ item }) => {
               <span className="step-name">Pending</span>
             </div>
             <div className="dline">
-              <div className="line sel"></div>
+              <div
+                className={
+                  item.order.status == "accepted" ||
+                  item.order.status == "shipped" ||
+                  item.order.status == "delivered"
+                    ? "line sel"
+                    : "line"
+                }
+              ></div>
             </div>
             <div className="step">
               <div
                 className={
-                  item.order.status == "pickedup"
+                  item.order.status == "accepted" ||
+                  item.order.status == "shipped" ||
+                  item.order.status == "delivered"
                     ? "step-icon selc"
                     : "step-icon"
                 }
               >
                 <div className="selected"></div>
               </div>
-              <span className="step-name">Pickedup</span>
+              <span className="step-name">Accepted</span>
             </div>
             <div className="dline">
-              <div className="line"></div>
+              <div
+                className={
+                  item.order.status == "shipped" ||
+                  item.order.status == "delivered"
+                    ? "line sel"
+                    : "line"
+                }
+              ></div>
             </div>
             <div className="step">
               <div
                 className={
-                  item.order.status == "shipping"
+                  item.order.status == "shipped" ||
+                  item.order.status == "delivered"
                     ? "step-icon selc"
                     : "step-icon"
                 }
-              ></div>
+              >
+                <div className="selected"></div>
+              </div>
               <span className="step-name">Shipping</span>
             </div>
             <div className="dline">
-              <div className="line"></div>
+              <div
+                className={
+                  item.order.status == "delivered" ? "line sel" : "line"
+                }
+              ></div>
             </div>
             <div className="step">
               <div
@@ -73,7 +103,9 @@ const OrderCard = ({ item }) => {
                     ? "step-icon selc"
                     : "step-icon"
                 }
-              ></div>
+              >
+                <div className="selected"></div>
+              </div>
               <span className="step-name">Delivered</span>
             </div>
           </div>
